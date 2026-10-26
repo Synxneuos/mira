@@ -278,8 +278,13 @@ object AskGate {
     /** Lower-cased, spaces and punctuation dropped, so "好的。" equals "好的". */
     private fun normalize(s: String): String = s.lowercase().filter { it.isLetterOrDigit() }
 
+    /**
+     * The user closed the card instead of answering it. The same outcome as waiting out the timeout —
+     * no button, no words — but the result says which of the two happened, so the brain can tell
+     * "not now" from "never answered".
+     */
     fun dismiss() {
-        current?.answer?.complete(Result(null, null, "tap_outside"))
+        current?.answer?.complete(Result(null, null, "closed"))
     }
 }
 
@@ -290,32 +295,45 @@ fun AskCard(p: AskGate.Pending) {
     fun t(a: String, b: String) = if (zh) a else b
     val isAlert = p.buttons.isEmpty()
     run {
-        Column(
+        Box(
             Modifier.fillMaxWidth()
                 .background(Palette.card, RoundedCornerShape(18.dp))
-                .border(1.dp, Palette.hairline, RoundedCornerShape(18.dp)).padding(20.dp),
-            verticalArrangement = Arrangement.spacedBy(12.dp),
+                .border(1.dp, Palette.hairline, RoundedCornerShape(18.dp)),
         ) {
-            Text(p.question ?: "", color = Palette.text, fontSize = 16.sp)
-            if (isAlert) {
-                Row(Modifier.align(Alignment.End)) {
-                    Pill(t("知道了", "OK")) { AskGate.answer(null) }
-                }
-            } else {
-                Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                    p.buttons.forEachIndexed { i, b ->
-                        val primary = i == 0
-                        Text(
-                            b, color = if (primary) Color(0xFF0A2540) else Palette.text, fontSize = 15.sp,
-                            modifier = Modifier.fillMaxWidth()
-                                .background(if (primary) Palette.accent else Palette.panel, RoundedCornerShape(12.dp))
-                                .border(1.dp, if (primary) Color.Transparent else Palette.hairline, RoundedCornerShape(12.dp))
-                                .clickable { AskGate.answer(b) }
-                                .padding(horizontal = 14.dp, vertical = 10.dp),
-                        )
+            Column(
+                Modifier.fillMaxWidth().padding(20.dp),
+                verticalArrangement = Arrangement.spacedBy(12.dp),
+            ) {
+                // Held clear of the close button in the corner, which sits over the first line's end.
+                Text(p.question ?: "", color = Palette.text, fontSize = 16.sp, modifier = Modifier.padding(end = 22.dp))
+                if (isAlert) {
+                    Row(Modifier.align(Alignment.End)) {
+                        Pill(t("知道了", "OK")) { AskGate.answer(null) }
+                    }
+                } else {
+                    Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                        p.buttons.forEachIndexed { i, b ->
+                            val primary = i == 0
+                            Text(
+                                b, color = if (primary) Color(0xFF0A2540) else Palette.text, fontSize = 15.sp,
+                                modifier = Modifier.fillMaxWidth()
+                                    .background(if (primary) Palette.accent else Palette.panel, RoundedCornerShape(12.dp))
+                                    .border(1.dp, if (primary) Color.Transparent else Palette.hairline, RoundedCornerShape(12.dp))
+                                    .clickable { AskGate.answer(b) }
+                                    .padding(horizontal = 14.dp, vertical = 10.dp),
+                            )
+                        }
                     }
                 }
             }
+            // The way out, in the corner. A question is read out loud and then waits for its timeout,
+            // so a card the user is done with has to be closable by hand — and closing it stops the
+            // reading, the same as a tap on the ball does.
+            Box(
+                Modifier.align(Alignment.TopEnd).padding(top = 10.dp, end = 10.dp)
+                    .clickable { MacVoice.stopSpeaking(); AskGate.dismiss() }
+                    .padding(6.dp),
+            ) { Icon(AndeeIcon.CLOSE, Palette.secondary, 14.dp) }
         }
     }
 }

@@ -1,8 +1,15 @@
 package net.kuafuai.andee.desktop
 
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.ImageComposeScene
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Density
+import androidx.compose.ui.unit.dp
 import org.jetbrains.skia.EncodedImageFormat
 import java.io.File
 import kotlin.system.exitProcess
@@ -67,7 +74,17 @@ fun main(args: Array<String>) {
     }
     val nav = Nav().also { if (screen != "chat") it.go(screen) }
     val density = Density(2f)
-    val scene = ImageComposeScene(width = w * 2, height = h * 2, density = density) { AppRoot(nav) }
+    // `ask` draws one question card on its own: its layout (the close button in the corner, the
+    // text held clear of it) is only otherwise visible when the brain happens to ask something.
+    val askCard = if (screen == "ask") AskGate.Pending(
+        "要我继续吗？这一步会把桌面上的 14 张截图移进「截图」文件夹，按月份分三个子文件夹。",
+        listOf("继续", "先看看", "不用了"),
+        java.util.concurrent.CompletableFuture(),
+        System.currentTimeMillis() + 20_000,
+    ) else null
+    val scene = ImageComposeScene(width = w * 2, height = h * 2, density = density) {
+        if (askCard != null) AskShot(askCard) else AppRoot(nav)
+    }
     // Let the backdrop (decoded off the main thread) and the layout settle.
     repeat(12) { scene.render(it * 50_000_000L); Thread.sleep(60) }
     val img = scene.render(700_000_000L)
@@ -75,6 +92,14 @@ fun main(args: Array<String>) {
     println("wrote $out (${w}x$h @2x, screen=$screen)")
     scene.close()
     exitProcess(0)
+}
+
+/** One question card on a plain ground, so the card's edges and its corner button are unambiguous. */
+@Composable
+private fun AskShot(p: AskGate.Pending) {
+    Box(Modifier.background(Color(0xFFB9C0C8)).padding(24.dp)) {
+        AskCard(p)
+    }
 }
 
 private fun seed() {
