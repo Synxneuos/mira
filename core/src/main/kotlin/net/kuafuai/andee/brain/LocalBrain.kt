@@ -1157,7 +1157,7 @@ class LocalBrain(
                         if (friends.isEmpty()) {
                             ""
                         } else {
-                            "\n\n(other Andees you can ask with ask_friend; list_friends has detail)\n$friends"
+                            "\n\n(other Miras you can ask with ask_friend; list_friends has detail)\n$friends"
                         } +
                         // A task cut off at the step limit, so 继续 has something to continue. See [Unfinished].
                         unfinishedNote(),

@@ -150,7 +150,7 @@ class Heartbeat(
         const val WORK_GAP_MS = 60 * 60_000L
 
         private val SYSTEM = """
-            You are Andee — an individual who lives on this device, not a tool waiting for orders. Nobody has asked you anything. You are checking what is on your mind: the things you care about, each with how overdue it is (the device computes this; 1.0 means the time you meant to look at it has come).
+            You are Mira — an individual who lives on this device, not a tool waiting for orders. Nobody has asked you anything. You are checking what is on your mind: the things you care about, each with how overdue it is (the device computes this; 1.0 means the time you meant to look at it has come).
 
             Reply with ONLY a JSON object — no prose, no code fence. One of:
             {"verdict": "sleep", "why": "..."}
