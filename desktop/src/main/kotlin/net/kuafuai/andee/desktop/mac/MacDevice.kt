@@ -176,7 +176,7 @@ class MacDevice : DesktopBrainHost.ToolProvider {
     private fun reminder(p: JSONObject): JSONObject {
         val h = p.optInt("hour", -1); val m = p.optInt("minutes", p.optInt("minute", 0))
         require(h in 0..23) { "hour 0-23 is required" }
-        val label = p.optString("label").ifBlank { p.optString("message") }.ifBlank { "Andee" }.replace("\"", "'")
+        val label = p.optString("label").ifBlank { p.optString("message") }.ifBlank { "Mira" }.replace("\"", "'")
         osa(
             """
             set d to current date
@@ -257,7 +257,7 @@ class MacDevice : DesktopBrainHost.ToolProvider {
         if (wanted.isEmpty()) return JSONObject().put("error", "no known permission ids in request")
         val zh = Strings.lang() == "zh"
         val names = wanted.joinToString(if (zh) "、" else ", ") { val (en, zh2) = CATALOG[it]!!; if (zh) zh2 else en }
-        val say = (if (zh) "还差这几项权限：" else "Andee still needs: ") + names + ". " +
+        val say = (if (zh) "还差这几项权限：" else "Mira still needs: ") + names + ". " +
             (if (zh) "要我现在打开系统设置，你来开一下吗？" else "Shall I open System Settings for you to allow them?")
         if (!confirm) return JSONObject().put("say", say).put("confirm_needed", true).put("ids", ids)
         var result = "waiting"
@@ -308,8 +308,8 @@ class MacDevice : DesktopBrainHost.ToolProvider {
         if (!p.waitFor(timeoutS, TimeUnit.SECONDS)) { p.destroyForcibly(); throw IllegalStateException("timed out waiting for the app") }
         if (p.exitValue() != 0) {
             if (out.contains("-1743") || out.contains("not allowed")) throw IllegalStateException(
-                "macOS has not given Andee permission to control that app. The user can allow it in System Settings → " +
-                    "Privacy & Security → Automation (Andee → that app).",
+                "macOS has not given Mira permission to control that app. The user can allow it in System Settings → " +
+                    "Privacy & Security → Automation (Mira → that app).",
             )
             throw IllegalStateException(out.trim().take(300))
         }

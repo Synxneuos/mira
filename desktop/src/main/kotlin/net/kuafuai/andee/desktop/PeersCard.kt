@@ -68,7 +68,7 @@ fun PeersCard(onDone: () -> Unit) {
     Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(20.dp)) {
         GlassHeader(
             t("朋友", "Friends"),
-            t("Andee 可以请朋友帮忙：你自己的其它设备，或者别人的 Andee", "Andee can ask friends for help: your other devices, or other people's Andees"),
+            t("Mira 可以请朋友帮忙：你自己的其它设备，或者别人的 Mira", "Mira can ask friends for help: your other devices, or other people's Miras"),
             onClose = onDone,
         )
 
@@ -84,8 +84,8 @@ fun PeersCard(onDone: () -> Unit) {
                 }
                 Spacer(Modifier.height(10.dp))
                 Text(
-                    if (inviteOwn) t("用你自己的手机：Andee 设置 → 朋友 → 扫码添加，扫这个码。", "On your own phone: Andee Settings → Friends → Scan to add, and scan this.")
-                    else t("让朋友用手机上的 Andee 扫这个码：设置 → 朋友 → 扫码添加。", "Have your friend scan this with Andee on their phone: Settings → Friends → Scan to add."),
+                    if (inviteOwn) t("用你自己的手机：Mira 设置 → 朋友 → 扫码添加，扫这个码。", "On your own phone: Mira Settings → Friends → Scan to add, and scan this.")
+                    else t("让朋友用手机上的 Mira 扫这个码：设置 → 朋友 → 扫码添加。", "Have your friend scan this with Mira on their phone: Settings → Friends → Scan to add."),
                     color = Palette.label, fontSize = 13.sp,
                 )
                 Text(t("两分钟内有效。", "Valid for two minutes."), color = Palette.muted, fontSize = 11.sp)

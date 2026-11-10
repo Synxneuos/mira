@@ -238,7 +238,7 @@ object MacNotifications {
         if (state == State.NO_ACCESS) o.put("how_to_enable", NO_ACCESS_NOTE)
         else if (state == State.NOT_FOUND) o.put("note", NOT_FOUND_NOTE)
         else if (Settings.get("notify").let { it != "chat" && it != "all" }) {
-            o.put("note", "Notifications are recorded but Andee does not act on them: the user has the Notifications setting off.")
+            o.put("note", "Notifications are recorded but Mira does not act on them: the user has the Notifications setting off.")
         }
         return o
     }
@@ -260,12 +260,12 @@ object MacNotifications {
     }
 
     val NO_ACCESS_NOTE: String get() =
-        "Andee cannot read the Mac's notification store. In System Settings → Privacy & Security → Full Disk Access, " +
-            "click + and add ${PermissionHelp.appPath() ?: "Andee.app"}, switch it on, then quit and reopen Andee (⌘Q). " +
-            "If Andee is already listed and on, remove it with − and add it again (it belongs to an earlier build)."
+        "Mira cannot read the Mac's notification store. In System Settings → Privacy & Security → Full Disk Access, " +
+            "click + and add ${PermissionHelp.appPath() ?: "Mira.app"}, switch it on, then quit and reopen Mira (⌘Q). " +
+            "If Mira is already listed and on, remove it with − and add it again (it belongs to an earlier build)."
 
     val NOT_FOUND_NOTE: String get() =
-        "Andee cannot find the Mac's notification store at any place this version of macOS is known to keep it. " +
+        "Mira cannot find the Mac's notification store at any place this version of macOS is known to keep it. " +
             "This is not a permission problem — Full Disk Access will not change it. Tell the user plainly that reading " +
             "notifications does not work on this Mac yet, and do not send them to System Settings for it."
 

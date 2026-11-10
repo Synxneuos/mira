@@ -222,7 +222,7 @@ class ShellTools(
         val (text, cut) = TerminalText.truncate(clean)
         put(key, text)
         if (cut) put("truncated", true).put("full_log", job.log.path)
-        if (sandboxed && Regex("Operation not permitted|Permission denied|Andee blocked").containsMatchIn(clean)) {
+        if (sandboxed && Regex("Operation not permitted|Permission denied|Mira blocked").containsMatchIn(clean)) {
             put(
                 "sandbox_hint",
                 "Something was blocked by the sandbox (writes outside the work folders, deletes outside rebuildable " +
@@ -317,7 +317,7 @@ Practicalities:
 - The terminal has no keyboard: anything that waits for input (a password, y/n, an editor) is reported as waiting — use a non-interactive form instead. No sudo.
 - Output is cleaned and cut to the first 2 KB and last 6 KB; the full log path comes back when it was cut. Secrets in output are masked.
 - If it is still running after timeout_s you get a job id: check it with command_output, end it with stop_command, never start it twice.
-- git push over SSH works when the user has given Andee a key; do not read or copy key files.
+- git push over SSH works when the user has given Mira a key; do not read or copy key files.
 """.trim(),
             JSONObject()
                 .put("command", prop("string", "The command line."))

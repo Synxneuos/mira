@@ -343,8 +343,8 @@ class NotebookTools(private val onSceneChanged: (String?) -> Unit) {
                 } else {
                     "Set. When it comes due and is dealt with, close it with todos(action=done, id=…) — otherwise it " +
                         "stays in the \"promised but not done\" list forever. "
-                }) + "This only fires while Andee is running; " +
-                    "if the Mac is off or Andee is closed, it is caught up the next time Andee starts.",
+                }) + "This only fires while Mira is running; " +
+                    "if the Mac is off or Mira is closed, it is caught up the next time Mira starts.",
             )
     }
 

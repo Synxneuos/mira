@@ -745,7 +745,7 @@ private fun WeChatQr(onDone: () -> Unit) {
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-                Text(if (zh) "加 Andee 为微信好友" else "Add Andee on WeChat", color = Palette.title, fontSize = 16.sp, modifier = Modifier.weight(1f))
+                Text(if (zh) "加 Mira 为微信好友" else "Add Mira on WeChat", color = Palette.title, fontSize = 16.sp, modifier = Modifier.weight(1f))
                 Box(Modifier.clickable(onClick = onDone).padding(6.dp)) { Icon(AndeeIcon.CLOSE, Palette.secondary, 14.dp) }
             }
             Spacer(Modifier.height(12.dp))
@@ -754,7 +754,7 @@ private fun WeChatQr(onDone: () -> Unit) {
                     modifier = Modifier.fillMaxWidth().background(Color.White, RoundedCornerShape(14.dp)).padding(6.dp))
             }
             Spacer(Modifier.height(12.dp))
-            Text(if (zh) "用微信扫码，添加 Andee 为好友" else "Scan with WeChat to add Andee as a friend", color = Palette.label, fontSize = 13.sp)
+            Text(if (zh) "用微信扫码，添加 Mira 为好友" else "Scan with WeChat to add Mira as a friend", color = Palette.label, fontSize = 13.sp)
         }
     }
 }

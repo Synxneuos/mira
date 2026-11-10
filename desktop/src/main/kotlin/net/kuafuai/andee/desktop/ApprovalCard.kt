@@ -102,7 +102,7 @@ fun ApprovalCard(p: ApprovalGate.Pending) {
                 }
                 return@Column
             }
-            Text(t("Andee 想运行一条命令", "Andee wants to run a command"), color = Palette.text, fontSize = 17.sp)
+            Text(t("Mira 想运行一条命令", "Mira wants to run a command"), color = Palette.text, fontSize = 17.sp)
             Text(a.why, color = Palette.text, fontSize = 14.sp)
             CommandText(a.command, zh)
             Text(t("在 ", "in ") + a.cwd, color = Palette.secondary, fontSize = 12.sp)

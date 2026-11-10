@@ -134,7 +134,7 @@ fun PageCard(r: Scrollback.Row) {
                 }
                 Box(Modifier.padding(top = 10.dp).fillMaxWidth().height(1.dp).background(Palette.hairline))
                 Text(
-                    if (zh) "Andee 做的页面 · 点击打开" else "A page by Andee · Click to open",
+                    if (zh) "Mira 做的页面 · 点击打开" else "A page by Mira · Click to open",
                     color = Palette.secondary, fontSize = 11.sp, modifier = Modifier.padding(top = 7.dp),
                 )
             } else {

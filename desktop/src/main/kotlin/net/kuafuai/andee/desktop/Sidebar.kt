@@ -69,7 +69,7 @@ fun Sidebar(nav: Nav, width: androidx.compose.ui.unit.Dp = 228.dp) {
         // Brand row. No 新对话 button: the phone has none, and a stretch that is over is put away by the
         // quiet-hour review (or 整理 below); the menu bar's Andee → 新对话 is still there for whoever wants it.
         Row(Modifier.fillMaxWidth().padding(horizontal = 6.dp, vertical = 4.dp), verticalAlignment = Alignment.CenterVertically) {
-            Text("Andee", color = Palette.title, fontSize = 18.sp, fontWeight = FontWeight.SemiBold)
+            Text("Mira", color = Palette.title, fontSize = 18.sp, fontWeight = FontWeight.SemiBold)
         }
         Spacer(Modifier.height(12.dp))
 
@@ -99,7 +99,7 @@ fun Sidebar(nav: Nav, width: androidx.compose.ui.unit.Dp = 228.dp) {
         if (topics.isEmpty()) {
             Text(
                 t("聊完的一段会收在这里。安静一会儿它会自己整理，也可以点上面的「整理」。",
-                    "Finished stretches are put away here. Andee tidies up when it's quiet, or tap Tidy up."),
+                    "Finished stretches are put away here. Mira tidies up when it's quiet, or tap Tidy up."),
                 color = Palette.photoInk, fontSize = 11.sp, lineHeight = 15.sp,
                 modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
             )

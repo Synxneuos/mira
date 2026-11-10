@@ -76,9 +76,9 @@ object Assistant {
 
     /** Values that must never reach the model or a log: Andee's own keys, then the vault. */
     private fun secrets(): List<Pair<String, String>> = buildList {
-        Settings.get("llm_api_key").takeIf { it.length >= 8 }?.let { add("Andee's model key" to it) }
-        Settings.get("api_key").takeIf { it.length >= 8 }?.let { add("Andee's voice key" to it) }
-        codeFlyingKey().takeIf { it.length >= 8 }?.let { add("Andee's CodeFlying key" to it) }
+        Settings.get("llm_api_key").takeIf { it.length >= 8 }?.let { add("Mira's model key" to it) }
+        Settings.get("api_key").takeIf { it.length >= 8 }?.let { add("Mira's voice key" to it) }
+        codeFlyingKey().takeIf { it.length >= 8 }?.let { add("Mira's CodeFlying key" to it) }
         addAll(VaultSecrets.values())
     }
 
@@ -219,7 +219,7 @@ object Assistant {
                     val yes = if (zh) "允许" else "Allow"
                     val always = if (zh) "总是允许" else "Always allow"
                     val no = if (zh) "拒绝" else "Decline"
-                    val q = (if (zh) "朋友 ${from.name} 的 Andee 想请我做：" else "${from.name}, a friend's Andee, asks me to: ") + text.take(300)
+                    val q = (if (zh) "朋友 ${from.name} 的 Mira 想请我做：" else "${from.name}, a friend's Mira, asks me to: ") + text.take(300)
                     // The card sits beside the ball, which may be on a screen the user is not looking at — and
                     // nobody here asked for anything, so nothing else says a question is waiting. A sound and a
                     // wave are the knock on the door. (Measured: the first friend request timed out unseen.)
@@ -343,7 +343,7 @@ object Assistant {
         val open = Scrollback.snapshot().filter { it.topicId == null && it.role != Scrollback.Role.ERROR }
         if (open.count { it.role == Scrollback.Role.USER } >= 1 && open.size >= 2) {
             val first = open.first { it.role == Scrollback.Role.USER }.text.replace('\n', ' ').trim()
-            val text = open.joinToString("\n\n") { (if (it.role == Scrollback.Role.USER) "User: " else "Andee: ") + it.text }
+            val text = open.joinToString("\n\n") { (if (it.role == Scrollback.Role.USER) "User: " else "Mira: ") + it.text }
             Scrollback.fold(
                 title = first.take(28) + if (first.length > 28) "…" else "",
                 summary = first.take(120),

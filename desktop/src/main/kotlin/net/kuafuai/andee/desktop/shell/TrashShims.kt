@@ -41,7 +41,7 @@ object TrashShims {
             |case "${'$'}reply" in
             |  ok*) exit 0 ;;
             |  error:*) echo "rm: ${'$'}{reply#error: }" >&2; exit 1 ;;
-            |  *) echo "rm: Andee did not answer (${'$'}reply); nothing was deleted" >&2; exit 1 ;;
+            |  *) echo "rm: Mira did not answer (${'$'}reply); nothing was deleted" >&2; exit 1 ;;
             |esac
             |""".trimMargin()
         for (name in listOf("rm", "rmdir", "unlink")) {

@@ -146,7 +146,7 @@ class MacScreen(
         if (offMain) {
             out.put("other_display", true).put(
                 "hint",
-                "${raw.optString("app")}'s window is mostly on another display. Andee can only see and click the main display, " +
+                "${raw.optString("app")}'s window is mostly on another display. Mira can only see and click the main display, " +
                     "so this list and any screenshot do not show it. Ask the user to move the window to the main screen; do not aim at it.",
             )
         } else if (idx.isEmpty() || blind) {
@@ -474,7 +474,7 @@ class MacScreen(
     private fun typeBlind(text: String): JSONObject {
         // ⌘V lands in the frontmost app, and if that is Andee's own window it lands in Andee's own input.
         if (java.awt.Window.getWindows().any { it.isActive }) {
-            throw IllegalStateException("Andee's own window is in front, so a paste would land in Andee. Click into the other app's input box first.")
+            throw IllegalStateException("Mira's own window is in front, so a paste would land in Mira. Click into the other app's input box first.")
         }
         val app = Bridge.frontmost().optString("name").ifEmpty { throw IllegalStateException("no app is in front — open the app and click into its input box first") }
         if (!Bridge.setPasteboard(text)) throw IllegalStateException("could not put the text on the pasteboard")
@@ -716,7 +716,7 @@ class MacScreen(
             "This image carries an 8x12 aim grid, A1 (top-left) to H12 (bottom-right): letters run along the TOP edge and numbers " +
                 "down the LEFT edge like a map's rulers, and nothing is printed inside a cell. " +
                 "To click something, name its cell and which part of the cell — {\"cell\": \"D7\", \"part\": \"bottom-right\"} on " +
-                "tap_by_coordinates. Andee's own windows are never in this picture. A magenta ring marks where the last click landed."
+                "tap_by_coordinates. Mira's own windows are never in this picture. A magenta ring marks where the last click landed."
 
         init { Log.i("MacScreen", "screen tools registered") }
     }

@@ -214,7 +214,7 @@ fun SettingsScreen(
                 modifier = Modifier.fillMaxWidth().padding(top = 4.dp).heightIn(min = 56.dp).glassWell(12).padding(12.dp),
                 decorationBox = { inner ->
                     Box {
-                        if (notifyRule.isEmpty()) Text(t("没有设。跟 Andee 说一句就行，比如「消息都帮我处理一下」。", "Not set. Just tell Andee, e.g. \"handle all my messages\"."), color = Palette.muted, fontSize = 14.sp)
+                        if (notifyRule.isEmpty()) Text(t("没有设。跟 Mira 说一句就行，比如「消息都帮我处理一下」。", "Not set. Just tell Mira, e.g. \"handle all my messages\"."), color = Palette.muted, fontSize = 14.sp)
                         inner()
                     }
                 },
@@ -222,8 +222,8 @@ fun SettingsScreen(
             Note(t("每条消息进来时都会按这段话判断要不要处理。清空就恢复默认（多数消息不打扰你）。", "Every incoming message is judged by this. Clear it to go back to the default (most messages left alone)."))
             if (net.kuafuai.andee.desktop.mac.MacNotifications.state == net.kuafuai.andee.desktop.mac.MacNotifications.State.NO_ACCESS) {
                 Text(
-                    t("读不到通知：在 系统设置 → 隐私与安全性 → 完全磁盘访问权限 里加上 Andee。",
-                        "Can't read notifications: add Andee under System Settings → Privacy & Security → Full Disk Access."),
+                    t("读不到通知：在 系统设置 → 隐私与安全性 → 完全磁盘访问权限 里加上 Mira。",
+                        "Can't read notifications: add Mira under System Settings → Privacy & Security → Full Disk Access."),
                     color = Palette.warn, fontSize = 12.sp, modifier = Modifier.padding(top = 4.dp),
                 )
             }
@@ -293,7 +293,7 @@ fun SettingsScreen(
                 when (v["shell_mode"].orEmpty().ifEmpty { "ask" }) {
                     "auto" -> t("在沙箱里，普通命令直接跑；删大量文件、强推这类仍先问你。", "Ordinary commands run in the sandbox; destructive ones still ask first.")
                     "read_only" -> t("只允许查看类命令，其它一律拒绝。", "Only read-only commands are allowed.")
-                    "full" -> t("不进沙箱、不问：Andee 能改动这台 Mac 上的任何文件。", "No sandbox, no asking: Andee can change any file.")
+                    "full" -> t("不进沙箱、不问：Mira 能改动这台 Mac 上的任何文件。", "No sandbox, no asking: Mira can change any file.")
                     else -> t("只读命令直接跑，其它每条先问你。", "Read-only commands run; everything else asks first.")
                 },
             )
@@ -509,7 +509,7 @@ private fun FullOpenConfirm(zh: Boolean, onYes: () -> Unit, onNo: () -> Unit) {
         verticalArrangement = Arrangement.spacedBy(8.dp),
     ) {
         Text(
-            t("完全开放后，Andee 运行命令不再进沙箱、不再问你。确认的话输入「开启」。", "With full access, commands run without the sandbox or asking. Type \"enable\" to confirm."),
+            t("完全开放后，Mira 运行命令不再进沙箱、不再问你。确认的话输入「开启」。", "With full access, commands run without the sandbox or asking. Type \"enable\" to confirm."),
             color = Palette.label, fontSize = 13.sp,
         )
         androidx.compose.foundation.text.BasicTextField(

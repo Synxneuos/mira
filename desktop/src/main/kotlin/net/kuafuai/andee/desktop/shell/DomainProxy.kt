@@ -72,7 +72,7 @@ class DomainProxy(
         }
         if (!allowed(host)) {
             Log.i(TAG, "blocked $host")
-            val msg = "Andee blocked $host: the user has not allowed this domain."
+            val msg = "Mira blocked $host: the user has not allowed this domain."
             client.getOutputStream().write(
                 "HTTP/1.1 403 Forbidden\r\nContent-Type: text/plain\r\nContent-Length: ${msg.length}\r\nConnection: close\r\n\r\n$msg"
                     .toByteArray(),

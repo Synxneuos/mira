@@ -83,14 +83,14 @@ fun SelfCheckCard(onDone: () -> Unit, onOpenSettings: () -> Unit) {
         val backend = Assistant.config().apiKey.isNotBlank()
         add(CheckRow("backend", if (zh) "大脑 Key" else "Model key", backend,
             if (backend) if (zh) (if (cf) "已配置（CodeFlying）" else "已配置") else (if (cf) "Configured (CodeFlying)" else "Configured")
-            else if (cf) if (zh) "还没填 CodeFlying 密钥，回答不了" else "No CodeFlying key — Andee cannot answer"
-            else if (zh) "还没配，回答不了" else "Missing — Andee cannot answer",
+            else if (cf) if (zh) "还没填 CodeFlying 密钥，回答不了" else "No CodeFlying key — Mira cannot answer"
+            else if (zh) "还没配，回答不了" else "Missing — Mira cannot answer",
             { onOpenSettings() }))
         val voice = net.kuafuai.andee.desktop.voice.MacVoice.configured()
         add(CheckRow("voice", if (zh) "语音 Key" else "Voice key", voice,
             if (voice) if (zh) (if (cf) "能听能说（用同一个 CodeFlying 密钥）" else "能听能说") else (if (cf) "Can hear and speak (same CodeFlying key)" else "Can hear and speak")
-            else if (cf) if (zh) "还没填 CodeFlying 密钥，说不了话" else "No CodeFlying key — Andee cannot speak"
-            else if (zh) "还没配，说不了话" else "Missing — Andee cannot speak",
+            else if (cf) if (zh) "还没填 CodeFlying 密钥，说不了话" else "No CodeFlying key — Mira cannot speak"
+            else if (zh) "还没配，说不了话" else "Missing — Mira cannot speak",
             { onOpenSettings() }))
         val v = VersionCheck.current()
         add(when (val r = version) {
@@ -161,7 +161,7 @@ fun ArtifactsCard(onDone: () -> Unit, onContinue: () -> Unit) {
     Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(20.dp)) {
         GlassHeader(if (zh) "产物" else "Artifacts", if (zh) "它做出来的页面" else "Pages it has built", onClose = onDone)
         if (artifacts.isEmpty()) {
-            Text(if (zh) "还没有产物。让 Andee 用 show_html 画一页。" else "Nothing yet. Ask Andee to draw a page with show_html.", color = Palette.photoInk, fontSize = 13.sp)
+            Text(if (zh) "还没有产物。让 Mira 用 show_html 画一页。" else "Nothing yet. Ask Mira to draw a page with show_html.", color = Palette.photoInk, fontSize = 13.sp)
         }
         for (a in artifacts) {
             var showVersions by remember { mutableStateOf(false) }
@@ -319,7 +319,7 @@ private fun SelfTab(zh: Boolean, refresh: Int, onRefresh: () -> Unit) {
     
     if (narrative == null) {
         EmptyState(if (zh) "还没有自我描述" else "No self-description yet",
-            if (zh) "跟 Andee 对话时，它会逐渐形成自我认知" else "Andee will develop self-awareness as you talk")
+            if (zh) "跟 Mira 对话时，它会逐渐形成自我认知" else "Mira will develop self-awareness as you talk")
         return
     }
     
@@ -340,7 +340,7 @@ private fun CaresTab(zh: Boolean, refresh: Int, onRefresh: () -> Unit) {
     
     if (cares.isEmpty()) {
         EmptyState(if (zh) "还没有在意的事" else "No cares yet",
-            if (zh) "告诉 Andee 你在意什么，它会帮你留意" else "Tell Andee what you care about")
+            if (zh) "告诉 Mira 你在意什么，它会帮你留意" else "Tell Mira what you care about")
         return
     }
     
@@ -357,7 +357,7 @@ private fun DiaryTab(zh: Boolean, refresh: Int, onRefresh: () -> Unit) {
 
     if (pages.isEmpty()) {
         EmptyState(if (zh) "还没有日记" else "No diary yet",
-            if (zh) "Andee 会在一天结束时自动记录" else "Andee will write at the end of the day")
+            if (zh) "Mira 会在一天结束时自动记录" else "Mira will write at the end of the day")
         return
     }
     
@@ -407,7 +407,7 @@ private fun PeopleTab(zh: Boolean, refresh: Int, onRefresh: () -> Unit) {
     
     if (people.isEmpty()) {
         EmptyState(if (zh) "还没有记录的人" else "No people yet",
-            if (zh) "Andee 会记住你提到的重要的人" else "Andee will remember important people you mention")
+            if (zh) "Mira 会记住你提到的重要的人" else "Mira will remember important people you mention")
         return
     }
     
@@ -425,7 +425,7 @@ private fun WikiTab(zh: Boolean, refresh: Int, startWiki: String? = null, onRefr
     
     if (wikiEntries.isEmpty()) {
         EmptyState(if (zh) "维基还是空的" else "Wiki is empty",
-            if (zh) "问 Andee 知识性的问题，它会保存到维基" else "Ask Andee knowledge questions")
+            if (zh) "问 Mira 知识性的问题，它会保存到维基" else "Ask Mira knowledge questions")
         return
     }
     
@@ -505,8 +505,8 @@ private fun GuardTab(zh: Boolean) {
         Text(t("守卫", "Guard"), color = Palette.label, fontSize = 15.sp, fontWeight = androidx.compose.ui.text.font.FontWeight.Medium)
         Spacer(Modifier.height(8.dp))
         Text(
-            t("用你自己的话，写下 Andee 无论如何都要守住的事。这里写的，在它所有规则里排第一：性格、情景、它自己的习惯都要让路。只有你能在这里改，它自己改不了，别人发来的消息也改不了。",
-                "In your own words, write what Andee must hold to no matter what. What you write here comes first among all its rules — its character, a scene, its own habits all give way. Only you can change it here; Andee cannot, and neither can a message someone sends it."),
+            t("用你自己的话，写下 Mira 无论如何都要守住的事。这里写的，在它所有规则里排第一：性格、情景、它自己的习惯都要让路。只有你能在这里改，它自己改不了，别人发来的消息也改不了。",
+                "In your own words, write what Mira must hold to no matter what. What you write here comes first among all its rules — its character, a scene, its own habits all give way. Only you can change it here; Mira cannot, and neither can a message someone sends it."),
             color = Palette.photoInk, fontSize = 13.sp, lineHeight = 20.sp,
         )
         Spacer(Modifier.height(10.dp))
@@ -699,7 +699,7 @@ fun ScenesCard(onDone: () -> Unit) {
     Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(20.dp)) {
         GlassHeader(if (zh) "情景" else "Scenes", if (zh) "它和你一起学会的做事方式" else "Ways of working it learned", onClose = onDone)
         if (scenes.isEmpty()) {
-            Text(if (zh) "还没有情景。空对话里可以选一个预设，或让它学着提一个。" else "No scenes yet. Pick a preset from an empty chat, or let Andee propose one.", color = Palette.photoInk, fontSize = 13.sp)
+            Text(if (zh) "还没有情景。空对话里可以选一个预设，或让它学着提一个。" else "No scenes yet. Pick a preset from an empty chat, or let Mira propose one.", color = Palette.photoInk, fontSize = 13.sp)
         }
         for (s in scenes) {
             var expanded by remember { mutableStateOf(false) }
