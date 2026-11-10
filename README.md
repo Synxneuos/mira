@@ -1199,6 +1199,12 @@ The four points worth reading even if you read nothing else:
   the fact.
 - **It can be steered by what is on screen.** Anyone who can get you to open a page can influence it.
 
+## Contributors
+
+- **[Naquib / Synxneuos](https://github.com/Synxneuos)** — Project Creator, Architecture & Lead Maintainer
+- **[Claude](https://anthropic.com/claude)** (Anthropic) — Autonomous AI Pair Programmer & Core Rebranding Contributor
+- See [CONTRIBUTORS.md](CONTRIBUTORS.md) for full credits and details.
+
 ## License
 
 [Apache-2.0 **with additional conditions**](LICENSE) — no multi-tenant SaaS, no white-labelling
