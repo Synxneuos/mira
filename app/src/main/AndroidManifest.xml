@@ -15,7 +15,7 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
     <!-- How much each app is used, for the gear shelf. A special access the user grants in Settings (the app can
-         only point at the page); without it the shelf ranks by what Andee itself opened. -->
+         only point at the page); without it the shelf ranks by what Mira itself opened. -->
     <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"
         tools:ignore="ProtectedPermissions" />
     <!-- Location & steps are runtime permissions; DeviceInfoController asks
@@ -39,7 +39,7 @@
          See ui/ImeSwitch.
          Not grantable at install: this is `signature|privileged|development`, so
          the app has to be installed and then granted by adb
-         (`adb shell pm grant net.kuafuai.andee android.permission.WRITE_SECURE_SETTINGS`),
+         (`adb shell pm grant net.synxneuos.mira android.permission.WRITE_SECURE_SETTINGS`),
          which the provisioning of this tablet already does. Without the grant
          the brain cannot move the keyboard at all, so `type_text` fails loudly
          and says why — rather than broadcasting into nobody and having the
@@ -115,7 +115,7 @@
     <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
 
     <application
-        android:name=".AndeeApp"
+        android:name=".MiraApp"
         android:allowBackup="false"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"

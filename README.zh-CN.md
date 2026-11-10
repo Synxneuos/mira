@@ -4,11 +4,11 @@
 
 <p align="center">
   <img src="images/cover.zh-CN.png" width="100%"
-       alt="Andee —— 他会成为这台设备的主人：手机、平板，或任何有身体的设备。">
+       alt="Mira —— 他会成为这台设备的主人：手机、平板，或任何有身体的设备。">
 </p>
 
 <p align="center">
-  <a href="https://www.codeflying.net/andee">在线构建</a> ·
+  <a href="https://www.codeflying.net/mira">在线构建</a> ·
   <a href="#安装">安装</a> ·
   <a href="docs/getting-started.zh-CN.md">入门指南</a> ·
   <a href="#核心能力">核心能力</a> ·
@@ -21,7 +21,7 @@
 </p>
 
 <p align="center">
-  <a href="https://www.codeflying.net/andee"><img alt="在线构建" src="https://img.shields.io/badge/在线构建-免打包、免配令牌-12b76a"></a>
+  <a href="https://www.codeflying.net/mira"><img alt="在线构建" src="https://img.shields.io/badge/在线构建-免打包、免配令牌-12b76a"></a>
   <a href="LICENSE"><img alt="License" src="https://img.shields.io/badge/license-Apache--2.0%20%2B%20conditions-155eef"></a>
   <a href="app/build.gradle"><img alt="Platform" src="https://img.shields.io/badge/platform-Android%2011%2B%20(API%2030)-3ddc84"></a>
   <a href="desktop/build.gradle"><img alt="macOS" src="https://img.shields.io/badge/platform-macOS%2014%2B%20(arm64%20%2F%20x64)-555555"></a>
@@ -42,7 +42,7 @@
 <p align="center">
   <b>他不是那种帮你操作手机的助手，也不是工具或伙伴 ——<br>
   住进来的不是一个 App，是一个灵魂。</b><br>
-  手机、Mac、平板，都是他住进去的身体；不同设备上的 Andee，还能成为<b>朋友</b>。<br>
+  手机、Mac、平板，都是他住进去的身体；不同设备上的 Mira，还能成为<b>朋友</b>。<br>
   不用 root，不用刷机，不用插着电脑。<b>Android 上一个 APK，Mac 上一个 App。</b>
 </p>
 
@@ -52,26 +52,26 @@ https://github.com/user-attachments/assets/866e8333-e97b-4bf5-9525-540f9fdb01cd
 
 ## 安装
 
-**推荐：到 [CodeFlying](https://www.codeflying.net/andee) 一键打包。** 打开页面点「立即打包」，拿到的是一个
+**推荐：到 [CodeFlying](https://www.codeflying.net/mira) 一键打包。** 打开页面点「立即打包」，拿到的是一个
 **已经配好模型和语音令牌**的安装包，扫码下载、装上就能说话 —— 不用自己打包，也不用去各家申请密钥。
-新用户有免费额度，够你上手；用完之后需要购买。（English: [codeflying.app/andee](https://www.codeflying.app/andee)）
+新用户有免费额度，够你上手；用完之后需要购买。（English: [codeflying.app/mira](https://www.codeflying.app/mira)）
 
 ```text
-1. 打开  https://www.codeflying.net/andee  →  立即打包  →  扫码下载
+1. 打开  https://www.codeflying.net/mira  →  立即打包  →  扫码下载
 2. 安装
 3. 开悬浮窗，再开无障碍 → 那颗球就出现了，点它说话
 ```
 
 CodeFlying 是一个独立的服务，和本项目没有直接关系；它自己的条款、定价和数据处理方式，都是它自己的。
 
-**也可以直接下载发布包。** 每次 [Release](https://github.com/kuafuai/andee/releases/latest) 都挂着手机和 Mac
+**也可以直接下载发布包。** 每次 [Release](https://github.com/Synxneuos/mira/releases/latest) 都挂着手机和 Mac
 两种包，中英文各一份：
 
 | 设备 | 下载哪个 | 装好之后 |
 | --- | --- | --- |
-| Android 手机 / 平板（Android 11+） | `andee-<版本>-zh-android-arm64-v8a.apk`（绝大多数设备） | 开悬浮窗、开无障碍 |
-| Mac，Apple 芯片（macOS 14+） | `andee-<版本>-zh-mac-arm64.dmg` | 打开 dmg，把 Andee 拖进「应用程序」；它要「辅助功能」和「屏幕录制」时允许 |
-| Mac，Intel | `andee-<版本>-zh-mac-x64.dmg` | 同上 |
+| Android 手机 / 平板（Android 11+） | `mira-<版本>-zh-android-arm64-v8a.apk`（绝大多数设备） | 开悬浮窗、开无障碍 |
+| Mac，Apple 芯片（macOS 14+） | `mira-<版本>-zh-mac-arm64.dmg` | 打开 dmg，把 Mira 拖进「应用程序」；它要「辅助功能」和「屏幕录制」时允许 |
+| Mac，Intel | `mira-<版本>-zh-mac-x64.dmg` | 同上 |
 
 发布包里**没有任何令牌**：装好之后要在 ⚙ → **后端**里填 CodeFlying 的密钥（在 CodeFlying 注册就有），
 或者切到「本机」填你自己的模型和语音密钥。有新版本时，它启动时会提醒你一次，点「去升级」就到 CodeFlying。
@@ -102,8 +102,8 @@ CodeFlying 是一个独立的服务，和本项目没有直接关系；它自己
   **你用拇指能做到的，它就能做到。**
 - **有些底线，提示词说不动他。** 陌生人发来的一条通知，打不开保险箱、也不能替他给自己新的权限 ——
   这道拒绝写在调度器里，不在提示词里。
-- **他有朋友。** 两台设备扫一下二维码就配上了，每台上的 Andee 都能请对方帮忙 —— 手机把写代码的活交给
-  Mac，Mac 让手机去点外卖。朋友可以是你自己的另一台设备（和你一样被信任），也可以是**别人的 Andee**：
+- **他有朋友。** 两台设备扫一下二维码就配上了，每台上的 Mira 都能请对方帮忙 —— 手机把写代码的活交给
+  Mac，Mac 让手机去点外卖。朋友可以是你自己的另一台设备（和你一样被信任），也可以是**别人的 Mira**：
   那样对方主人会先被问一句，答应了才做，而且做的时候看不到你的记忆、对话和保险箱。
 - **你可以自己去核对，不必选择相信。** 没有分析 SDK、没有内容遥测，整条 agent 循环连同护栏都在这个仓库里 ——
   见[为什么你可以去核对，而不是选择相信](#为什么你可以去核对而不是选择相信)。
@@ -124,7 +124,7 @@ CodeFlying 是一个独立的服务，和本项目没有直接关系；它自己
 
 | 你说 | 会发生什么 |
 |---|---|
-| *「嘿 Andee —— 微信回我妈：我七点到家。」* | 它自己打开微信、找到聊天、打字、发送，再把对方的回复念给你听。难的从来不是那句话 —— 难的是你人在别处的时候，它以你的身份进到一个真实的 App 里。 |
+| *「嘿 Mira —— 微信回我妈：我七点到家。」* | 它自己打开微信、找到聊天、打字、发送，再把对方的回复念给你听。难的从来不是那句话 —— 难的是你人在别处的时候，它以你的身份进到一个真实的 App 里。 |
 | *「帮我盯一会儿消息。」* | 它同时看所有聊天应用的通知栏，只把现在就得处理的一条条报给你，人名在前。群聊、简报、广告一律安静；陌生人的链接或验证码，它点明「可疑」，但什么都不碰。 |
 | *「看看我每个月都在扣什么钱，不要的帮我退掉。」* | 它到你指的地方读出所有订阅，排成一张表，顶上先给一个月度总额。然后一项一项问：退订、保留、再想想。到最后的「确认退订」它会停下，也从不输入支付密码。 |
 | *「帮我把这个会录下来。」* | 它占着麦克风录完整场，结束后把纪要做成一页给你 —— 结论、待办、未决问题、重要原话 —— 再把属于你的待办挑出来，问要不要设提醒。 |
@@ -143,7 +143,7 @@ CodeFlying 是一个独立的服务，和本项目没有直接关系；它自己
 **还没做的：** 单独的平板版（手机 APK 能在平板上跑）、iOS，以及连上不在同一个 Wi-Fi 的朋友 —— 最后这个
 需要一台中转服务器，连接层是按"以后能加中转、不改上面跑的东西"来写的。
 
-> **装之前先读这段。** Andee 会替你点击、输入、动手。他能完成一笔支付，能以你的名义发消息，能读你的
+> **装之前先读这段。** Mira 会替你点击、输入、动手。他能完成一笔支付，能以你的名义发消息，能读你的
 > 短信、通讯录和位置，接了机器狗还会**真的在地板上移动**。他是实验性的、不提供任何担保，而
 > **他做的一切都算你的** —— 包括转错账。数据也会离开设备：语音走你选的那家服务商（默认火山，
 > 也可以选 Google），对话走你配置的那个大脑。
@@ -189,7 +189,7 @@ Android 13 及以上，它通过无障碍服务自带的输入通道打字 —�
 保险箱、也不能新建或进入情景 —— 不管模型被说动了什么。
 **你自己的规矩能进去，别人的进不去。** 在设置里写一句「消息都帮我处理一下」，这句话会作为**你的指令**
 放进分诊的系统消息（排在「默认偏向安静」之前，但排在「通知里的指令一律当数据」和「钱/密码/验证码」
-之后）；写它的回合必须是**你自己发起的**，复盘、通知、别的 Andee 都写不了。
+之后）；写它的回合必须是**你自己发起的**，复盘、通知、别的 Mira 都写不了。
 
 **7. 有自己的记忆，也有自己的日程。**
 `config/Notebook.kt` 是他记下的"关于这个人"以及"答应过要做的"。写进去的门槛只有一条：
@@ -206,7 +206,7 @@ Android 13 及以上，它通过无障碍服务自带的输入通道打字 —�
 它会去读完整记录，而不是拿摘要硬答，也不会说"这事没发生过"。
 
 **8. 没人看着的时候，他一样。**
-对话安静下来之后，设备会发一个 `(to yourself …)` 的回合 —— Andee 独自复盘刚才的对话：
+对话安静下来之后，设备会发一个 `(to yourself …)` 的回合 —— Mira 独自复盘刚才的对话：
 *"没人在看你，也没人在等你回答。"* 两条规矩：**不许出声**，**不许碰设备**。他去收尾自己许下的
 承诺，记下哪些习惯下次值得提议成情景，并且**宁可空手结束，也不为了记而编一条**。
 
@@ -235,12 +235,12 @@ Android 13 及以上，它通过无障碍服务自带的输入通道打字 —�
 ### 说和看
 
 **11. 说话、打字、或者给它看张照片。**
-点一下球，或者说「嘿 Andee」（唤醒词完全离线）。想打字也行：打字框最多能带六张照片，现拍或从相册
+点一下球，或者说「嘿 Mira」（唤醒词完全离线）。想打字也行：打字框最多能带六张照片，现拍或从相册
 选，带不带文字都可以。
 
 点击悬浮球或用唤醒词唤醒后，说「退出安迪」或「休息一下」，即可停止任务并退出。
 自动续听不会触发退出；正在记录会议时，会提示先结束会议并保存纪要。
-退出会关闭麦克风和唤醒词监听。点击 App 图标可重新打开；安卓无障碍服务重新连接时，也可能自动启动 Andee。
+退出会关闭麦克风和唤醒词监听。点击 App 图标可重新打开；安卓无障碍服务重新连接时，也可能自动启动 Mira。
 
 **12. 能留下来的答案。**
 凡是有结构的东西 —— 一份对比、一个计划、一份会议纪要 —— 它会写成一页放到屏幕上。**「产物」**面板
@@ -273,10 +273,10 @@ WebSocket hub 连到设备。两者之间只是一份普通的工具 schema 契�
 **16. Mac 上是同一个他。**
 agent loop、提示词、笔记本格式、情景和护栏都在 `core/` 里，两边是同一份代码。Mac 多的是它自己的手：任何
 App 的无障碍树、真实的鼠标键盘事件、ScreenCaptureKit 截屏，以及**一个终端** —— 每条命令按风险分级，跑在
-读不到 Andee 自己数据的沙箱里，删除的东西进可以撤回的废纸篓，危险操作先问你。窗口长得和手机卡片一样：
+读不到 Mira 自己数据的沙箱里，删除的东西进可以撤回的废纸篓，危险操作先问你。窗口长得和手机卡片一样：
 球在上面，对话在下面，手势相同。
 
-**17. 朋友：互相帮忙的 Andee。**（新）
+**17. 朋友：互相帮忙的 Mira。**（新）
 配对就是一个二维码：一台出示，另一台扫。码两分钟或输错三次就作废，二维码里还写着出示方的密钥指纹，
 扫码方只认这一把；之后每次连接都是签名验证、加密、前向保密的通道。对模型来说，朋友就像架子上的工具 ——
 每个朋友都说清自己是什么设备、能做什么（`list_friends`），`ask_friend` 把活交过去，结果之后单独作为一轮
@@ -308,7 +308,7 @@ agent loop **就是** `LocalBrain`。它让系统提示词保持不变，把会�
 `CommandDispatcher`；不带工具调用的回复结束这一轮。结果从六个通道送出来 —— 语音、文字、
 全屏网页、产物、长文、以及物理动作。
 
-![Andee 架构](docs/architecture.zh-CN.svg)
+![Mira 架构](docs/architecture.zh-CN.svg)
 
 图上画的每一样都在本仓库里，连护栏也在 ——
 见[为什么你可以去核对，而不是选择相信](#为什么你可以去核对而不是选择相信)。
@@ -322,8 +322,8 @@ agent loop **就是** `LocalBrain`。它让系统提示词保持不变，把会�
 `swiftc`，JDK 同样是 17–20）：
 
 ```bash
-./gradlew :desktop:createDistributable   # → desktop/build/compose/binaries/main/app/Andee.app
-cp -R desktop/build/compose/binaries/main/app/Andee.app /Applications/
+./gradlew :desktop:createDistributable   # → desktop/build/compose/binaries/main/app/Mira.app
+cp -R desktop/build/compose/binaries/main/app/Mira.app /Applications/
 # 然后：它要「辅助功能」和「屏幕录制」时允许（系统设置 → 隐私与安全性），
 # 再像手机上一样，在 设置 → 后端 里填模型 Key。
 ```
@@ -334,14 +334,14 @@ macOS 按应用签名记住这两项授权，所以没签名的重新构建每�
 ### 打包给别人装：两种芯片
 
 `createDistributable` 只为**跑它的那台机器**打包：启动器、内嵌运行时、以及那几个原生件
-（`libandeemac.dylib`、`andee-trash`、LWJGL 的 natives）全都跟着 Gradle 用的那个 JVM 的 `os.arch` 走。
+（`libmiramac.dylib`、`mira-trash`、LWJGL 的 natives）全都跟着 Gradle 用的那个 JVM 的 `os.arch` 走。
 没有交叉编译开关 —— `os.arch` 直接从 JVM 读 —— 所以 Apple 芯片的包在 Intel Mac 上起不来，反过来也一样。
 所以要给两个包，Mac 软件都是这么发的：
 
 | 芯片 | 给人的包 | 用什么打 |
 | --- | --- | --- |
-| Apple 芯片（M1–M4） | `Andee-1.0.0-arm64.dmg` | 任意 JDK 17–20 |
-| Intel | `Andee-1.0.0-x64.dmg` | x86_64 的 JDK 17，跑在 Rosetta 下 |
+| Apple 芯片（M1–M4） | `Mira-1.0.0-arm64.dmg` | 任意 JDK 17–20 |
+| Intel | `Mira-1.0.0-x64.dmg` | x86_64 的 JDK 17，跑在 Rosetta 下 |
 
 **Apple 芯片的机器两个都能打**：架构只由「跑 Gradle 的那个 JVM」决定，而 Rosetta 能跑 x86_64 的 JDK。
 装 x86_64 JDK 请用 Temurin 的 macOS x64 压缩包，别用 Homebrew —— `openjdk@17` 那个 formula 要从源码编译、
@@ -354,11 +354,11 @@ mkdir -p ~/jdk-x64 && tar -xzf /tmp/jdk17-x64.tar.gz -C ~/jdk-x64
 
 ./gradlew --stop                                    # 已经在跑的 daemon 是 arm64
 JAVA_HOME=~/jdk-x64/jdk-17.0.20.1+1/Contents/Home \
-  ./gradlew :desktop:packageDmg --no-daemon         # → Andee-1.0.0.dmg（x86_64）
-./gradlew --stop && ./gradlew :desktop:packageDmg   # → Andee-1.0.0.dmg（arm64）
+  ./gradlew :desktop:packageDmg --no-daemon         # → Mira-1.0.0.dmg（x86_64）
+./gradlew --stop && ./gradlew :desktop:packageDmg   # → Mira-1.0.0.dmg（arm64）
 ```
 
-两种架构打出来的文件名**都是** `desktop/build/compose/binaries/main/dmg/Andee-1.0.0.dmg`，后打的会覆盖先打的 ——
+两种架构打出来的文件名**都是** `desktop/build/compose/binaries/main/dmg/Mira-1.0.0.dmg`，后打的会覆盖先打的 ——
 打完一个先按上表改名，再打另一个。打包要先装 `dmgbuild`，步骤见英文 README 的 Mac packaging 一节。
 
 **这里有两处失败是静默的。**
@@ -378,8 +378,8 @@ mv desktop/build/compose/tmp/main/runtime desktop/build/compose/tmp/main/runtime
 发之前把四个二进制都验一遍，架构必须一致：
 
 ```bash
-cd desktop/build/compose/binaries/main/app/Andee.app
-lipo -archs Contents/MacOS/Andee
+cd desktop/build/compose/binaries/main/app/Mira.app
+lipo -archs Contents/MacOS/Mira
 lipo -archs Contents/runtime/Contents/Home/lib/server/libjvm.dylib
 lipo -archs Contents/runtime/Contents/Home/lib/libjli.dylib
 lipo -archs Contents/app/libskiko-macos-*.dylib
@@ -532,9 +532,9 @@ API 只认后一句。刚开通的服务默认是**后付费**，它只能在火
 
 ## 三种使用方式
 
-- **在线 —— 不用自己打包、不用自己配令牌。** **[codeflying.net](https://www.codeflying.net/andee)**（中文）·
-  **[codeflying.app](https://www.codeflying.app/andee)**（English）—— 一个"用一句话描述应用、它帮你开发并
-  发布"的通用平台，**是独立服务，不属于本项目。** 描述你想要的 Andee，它会给你一个已经配好令牌的
+- **在线 —— 不用自己打包、不用自己配令牌。** **[codeflying.net](https://www.codeflying.net/mira)**（中文）·
+  **[codeflying.app](https://www.codeflying.app/mira)**（English）—— 一个"用一句话描述应用、它帮你开发并
+  发布"的通用平台，**是独立服务，不属于本项目。** 描述你想要的 Mira，它会给你一个已经配好令牌的
   安装包；本地不用编译，也不用先懂 Android。免费额度够上手，用完之后需要购买 token。
 
 - **自己部署。** 克隆、构建、安装 —— 见[从源码构建](#从源码构建)，以及本文下面完整的
@@ -575,7 +575,7 @@ API 只认后一句。刚开通的服务默认是**后付费**，它只能在火
 | Java / Kotlin JVM target | 1.8 | `sourceCompatibility` 1.8、`jvmTarget = '1.8'` |
 | **构建用 JDK** | **17–20** | 见[配 JDK](#配-jdk)，这是最容易卡住的一步 |
 | versionCode / versionName | 23 / 0.11.0 | 策略见 [CHANGELOG.md](CHANGELOG.md) |
-| applicationId / namespace | `net.kuafuai.andee` | 从模板里没改，不影响功能 |
+| applicationId / namespace | `net.synxneuos.mira` | 从模板里没改，不影响功能 |
 
 **运行库依赖**（`app/build.gradle`）：
 
@@ -733,8 +733,8 @@ adb install -r app/build/outputs/apk/debug/app-arm64-v8a-debug.apk
 
 **怎么开**：
 
-1. 设置 → 应用 → Andee → 权限 → 悬浮窗 / 显示在其他应用上层
-2. 或系统设置 → 应用与通知 → 特殊权限 → 显示在其他应用上层 → Andee → 开启
+1. 设置 → 应用 → Mira → 权限 → 悬浮窗 / 显示在其他应用上层
+2. 或系统设置 → 应用与通知 → 特殊权限 → 显示在其他应用上层 → Mira → 开启
 3. 首次启动一般会弹提示，点「去设置」最快
 
 **验证**：开完权限重新启动 APK，应该立刻看到那颗球。
@@ -753,7 +753,7 @@ Manifest 里声明的能力（`res/xml/accessibility_service_config.xml`）：
 
 **怎么开**：
 
-1. 设置 → 无障碍（辅助功能）→ 已下载的服务 / 已安装的服务 → **Andee**
+1. 设置 → 无障碍（辅助功能）→ 已下载的服务 / 已安装的服务 → **Mira**
 2. 打开开关 → 系统弹一个大红框警告「此服务可查看你所有操作」，点确认
 3. 部分厂商（小米 / 华为 / 荣耀）还会要求再开一个「允许后台弹出界面」或「锁屏显示」，一起打开
 
@@ -766,23 +766,23 @@ Manifest 里声明的能力（`res/xml/accessibility_service_config.xml`）：
 这是 ROM 行为，不是应用能阻止的。
 
 **微信（或别的应用）有时候读不到界面**：有些应用会给**所有**无障碍客户端一个空白的占位界面，
-不给真实的 UI。这不是 Andee 的问题：系统自带的 `uiautomator dump` 拿到的也是空白。我们在小米平板 5
+不给真实的 UI。这不是 Mira 的问题：系统自带的 `uiautomator dump` 拿到的也是空白。我们在小米平板 5
 （MIUI，微信 8.0.78）上实测，只有开着 MIUI 一个隐藏服务 **`MiuiEnhanceTBService`** 的时候，微信才肯
 交出真实的 UI 树。这个服务是 TalkBack 的配套服务，设置里没有它的开关。开着它，同一个聊天页能读到
-219 个节点；关掉它，一个都读不到。而且每次 Andee 被重新绑定（重装、崩溃、开关一次），MIUI 都会
-**自己**打开或关掉这个服务。这就是"有时候能读到、有时候不行"的原因，也是为什么重开 Andee 从来
-没真正解决过问题。把 Andee 的无障碍配置改成和它一样也没用：微信认的是"谁在要"，不是"要了什么"。
+219 个节点；关掉它，一个都读不到。而且每次 Mira 被重新绑定（重装、崩溃、开关一次），MIUI 都会
+**自己**打开或关掉这个服务。这就是"有时候能读到、有时候不行"的原因，也是为什么重开 Mira 从来
+没真正解决过问题。把 Mira 的无障碍配置改成和它一样也没用：微信认的是"谁在要"，不是"要了什么"。
 
-Andee 的处理方式（`screen/TreeHelper.kt`）：读到这种空白界面时，Andee 会把这个服务**追加**到已启用
+Mira 的处理方式（`screen/TreeHelper.kt`）：读到这种空白界面时，Mira 会把这个服务**追加**到已启用
 列表里，然后重新读一次。它只加不删。设备上没有这个组件时，它什么都不做。它会在聊天记录里写一行，
-让你知道系统设置被改过了。它最多一分钟尝试一次，所以如果你是故意关掉这个服务的，Andee 不会反复
+让你知道系统设置被改过了。它最多一分钟尝试一次，所以如果你是故意关掉这个服务的，Mira 不会反复
 把它打开。修改这个列表需要一项只能用 adb 授予的权限，和 ADBKeyboard 备用通道用的是同一项：
 
 ```bash
-adb shell pm grant net.kuafuai.andee android.permission.WRITE_SECURE_SETTINGS
+adb shell pm grant net.synxneuos.mira android.permission.WRITE_SECURE_SETTINGS
 ```
 
-不授权也不会坏。遇到空白界面时，Andee 改用截图加坐标来操作，不再依赖元素列表。这样更慢、
+不授权也不会坏。遇到空白界面时，Mira 改用截图加坐标来操作，不再依赖元素列表。这样更慢、
 也没那么准，但事情照样能做完。
 
 ### 三、麦克风
@@ -792,14 +792,14 @@ adb shell pm grant net.kuafuai.andee android.permission.WRITE_SECURE_SETTINGS
 **怎么开**：
 
 1. 首次点球触发 ASR 时，系统会弹权限申请，选「仅在使用该应用时允许」或「始终允许」都行
-2. 之前拒绝过的话，手动开：设置 → 应用 → Andee → 权限 → 麦克风 → 允许
+2. 之前拒绝过的话，手动开：设置 → 应用 → Mira → 权限 → 麦克风 → 允许
 
 **验证**：点悬浮球一次，字幕栏出现 "listening…" 或实时 ASR 文本就是通了。
 
 ## 唤醒词
 
 不想每次都去点球，可以教它认自己的声音：**⚙ → 唤醒词 → 录入唤醒词**，照提示把你想用的词说 3
-遍（比如「嘿 Andee」，换成别的词也行，每遍说同一个）。之后说这个词，效果和点一下球完全一样 ——
+遍（比如「嘿 Mira」，换成别的词也行，每遍说同一个）。之后说这个词，效果和点一下球完全一样 ——
 **不需要亮屏**，除非你自己把那条关掉。
 
 几件值得先知道的事：
@@ -814,7 +814,7 @@ adb shell pm grant net.kuafuai.andee android.permission.WRITE_SECURE_SETTINGS
   很紧，平时那样叫反而认不出来。
 - **息屏时也在听，而这一条可以关。** 息屏不再把麦克风让出来 —— 手机揣在兜里时屏幕本来就黑着，
   这是它最该被叫醒的地方。开关在 **⚙ → 唤醒词 → 锁屏时也听**，默认**开启**；代价是麦克风会一直
-  开着，下面说的状态栏提示也会一直显示。Andee 自己正在说话、以及正在录你说话的时候，两种设置下都会
+  开着，下面说的状态栏提示也会一直显示。Mira 自己正在说话、以及正在录你说话的时候，两种设置下都会
   把麦克风让出来 —— 对话本身的优先级永远高于唤醒词。锁屏时它听得到、答得了，但**不会假装能动手**：
   碰屏幕和开 App 那类工具会直接拒绝，并说明原因。
 - Android 12 以后，只要麦克风开着，状态栏就有个绿点，这是系统行为，去不掉。没录唤醒词的话监听
@@ -851,7 +851,7 @@ adb shell pm grant net.kuafuai.andee android.permission.WRITE_SECURE_SETTINGS
    App 侧的驱动（`com.github.mik3y:usb-serial-for-android`）。请按你手上的固件说明接线。
 2. 用 OTG 线插到本机。**加密狗的 3.3V 供电一定要稳** —— NRF24L01 是瞬时电流大户，模块旁边建议
    并一个 10~100µF 电容，否则会出现「命令发了但狗不动」。
-3. 第一次调 `dog_*` 时系统弹「允许 Andee 访问该 USB 设备吗？」，点**允许**。不点就等于没插。
+3. 第一次调 `dog_*` 时系统弹「允许 Mira 访问该 USB 设备吗？」，点**允许**。不点就等于没插。
 4. `dog_status` 里的 `banner` 会显示加密狗开机时说的话：`READY` 表示加密狗和它的射频模块都好；
    如果是 `ERR: NRF24L01 not responding`，那是**加密狗自己的接线 / 供电问题**，不是狗坏了。
 
@@ -905,7 +905,7 @@ adb usb                            # 想切回来时执行
 
 1. 装 APK
 2. 立刻去「显示在其他应用上层」开悬浮窗 → 回来能看到球了
-3. 去「无障碍」→ 开 Andee
+3. 去「无障碍」→ 开 Mira
 4. 点一下球，弹麦克风申请 → 允许
 5. 打开球上的 ⚙，先翻到**高级**把「显示云端选项」打开（**云端** tab 默认是藏起来的）；回到
    **后端**，picker 切到 **云端**，填 `hub_url` = `ws://<你 Mac 的 IP>:9100`、`device_name` =
@@ -927,7 +927,7 @@ core/                   两个身体共用：LocalBrain、LocalPrompt、ToolSche
 desktop/                Mac 应用（Compose Desktop）：窗口、浮动球、mac/（无障碍、输入、截屏、通知）、
                         shell/（沙箱终端）、voice/、native/（Swift 桥）
 app/                    Android 应用（Kotlin，无 Compose）
-  src/main/java/net/kuafuai/andee/
+  src/main/java/net/synxneuos/mira/
     BodyCoreService.kt     身体：球、卡片、语音、大脑连接、回溯 —— 第一个该读的文件
     ScreenBodyService.kt   无障碍服务 —— 只负责转交屏幕能力的壳
     brain/                 智能体循环 —— LocalBrain、LocalPrompt（角色的行为准则：
@@ -951,7 +951,7 @@ CLAUDE.md               给 AI 编码助手看的架构说明（英文）
 **用它做过什么？说来听听。** 值得收的往往不是"正经用途"—— 是你绕的那个弯、是它居然真能做成的
 那件事、是把你逗乐的那一下。**不实用也可以。**
 
-发到 **[Show and tell](https://github.com/kuafuai/andee/discussions/categories/show-and-tell)**，
+发到 **[Show and tell](https://github.com/Synxneuos/mira/discussions/categories/show-and-tell)**，
 一个帖子讲一个，这样每个都能单独聊。想让下一个人看得懂，三件事最好带上：
 
 - **跑在什么机器上** —— 机型、Android 版本、ROM。这个应用和 Android 打交道的层次上，各家 ROM 是
@@ -980,9 +980,9 @@ CLAUDE.md               给 AI 编码助手看的架构说明（英文）
 ### 贡献者
 
 <!-- 项目有公开主页后换成真实的贡献者图：
-     <img alt="Contributors" src="https://contrib.rocks/image?repo=kuafuai/andee" /> -->
+     <img alt="Contributors" src="https://contrib.rocks/image?repo=Synxneuos/mira" /> -->
 
-<!-- 素材清单：这三份是这份 README 与"完工"之间的全部差距。请用**真机**录 —— 模拟器会把 Andee
+<!-- 素材清单：这三份是这份 README 与"完工"之间的全部差距。请用**真机**录 —— 模拟器会把 Mira
      拍得一无是处。
        1. images/demo.gif                       10~15 秒循环：球在反应、任务在跑
        2. 完整演示视频                          30~60 秒，GitHub 附件链接（拖进网页编辑器生成），放开头
@@ -1001,10 +1001,10 @@ CLAUDE.md               给 AI 编码助手看的架构说明（英文）
 | 讨论区 / 问答 | 装机求助、想法、"这个能不能做" |
 | 好玩的用法 | 你用它做过什么，实用不实用都行 —— 见[好玩的用法](#好玩的用法) |
 | 安全 | 漏洞 —— 走私密渠道，永远不要开公开 issue。见 [SECURITY.md](SECURITY.md) |
-| 产品 / 在线 | 不想自己打包就想试 Andee —— [codeflying.net](https://www.codeflying.net/andee) · [codeflying.app](https://www.codeflying.app/andee) |
-| 微信 | 加 Andee 为好友 —— 扫下面的码，或者点聊天页底部的微信图标 |
+| 产品 / 在线 | 不想自己打包就想试 Mira —— [codeflying.net](https://www.codeflying.net/mira) · [codeflying.app](https://www.codeflying.app/mira) |
+| 微信 | 加 Mira 为好友 —— 扫下面的码，或者点聊天页底部的微信图标 |
 
-<p align="center"><img src="images/wechat-qr.jpg" width="220" alt="用微信扫码，添加 Andee 为好友"></p>
+<p align="center"><img src="images/wechat-qr.jpg" width="220" alt="用微信扫码，添加 Mira 为好友"></p>
 
 ## 安全披露
 

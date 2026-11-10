@@ -23,7 +23,7 @@
       三张全屏脸是同一套配色,开屏那一帧不该是例外。
     -->
     <style name="Theme.Body.Fullscreen" parent="Theme.Body">
-        <!-- DarkActionBar hands every one of these an "Andee" title bar over
+        <!-- DarkActionBar hands every one of these an "Mira" title bar over
              the brain's content, and on the camera screens it covered the ✕
              pill outright. HtmlActivity used to hide it in code; doing it here
              means a new full-screen face can't forget. -->

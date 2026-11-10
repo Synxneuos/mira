@@ -1,10 +1,10 @@
 <p align="center">  
   <img src="images/cover.png" width="100%"  
-       alt="Andee — it becomes the soul of the device. A phone, a tablet, or anything with a body.">  
+       alt="Mira — it becomes the soul of the device. A phone, a tablet, or anything with a body.">  
 </p>
 
 <p align="center">  
-  <a href="https://www.codeflying.app/andee">Build online</a> ·  
+  <a href="https://www.codeflying.app/mira">Build online</a> ·  
   <a href="#install">Install</a> ·  
   <a href="docs/getting-started.md">Getting started</a> ·
   <a href="#key-features">Features</a> ·  
@@ -19,7 +19,7 @@
 </p>
 
 <p align="center">  
-  <a href="https://www.codeflying.app/andee"><img alt="Build online" src="https://img.shields.io/badge/build%20online-no%20token%20setup-12b76a"></a>  
+  <a href="https://www.codeflying.app/mira"><img alt="Build online" src="https://img.shields.io/badge/build%20online-no%20token%20setup-12b76a"></a>  
   <a href="LICENSE"><img alt="License" src="https://img.shields.io/badge/license-Apache--2.0%20%2B%20conditions-155eef"></a>  
   <a href="app/build.gradle"><img alt="Platform" src="https://img.shields.io/badge/platform-Android%2011%2B%20(API%2030)-3ddc84"></a>  
   <a href="desktop/build.gradle"><img alt="macOS" src="https://img.shields.io/badge/platform-macOS%2014%2B%20(arm64%20%2F%20x64)-555555"></a>  
@@ -33,9 +33,6 @@
   <a href="./README.zh-CN.md"><img alt="Chinese" src="https://img.shields.io/badge/Chinese-d9d9d9"></a>  
 </p>
 
-<p align="center">
-  <a href="https://trendshift.io/repositories/304932?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-304932" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/304932/daily?language=Kotlin" alt="kuafuai%2Fandee | Trendshift" width="250" height="55"/></a>
-</p>
 
 <h1 align="center">Mira</h1>
 
@@ -46,7 +43,7 @@
   
   What moves in is not an app on the phone.</b>  
   
-  A phone, a Mac, a tablet — each is a body it lives in. And the Andees on different devices can be **friends**.  
+  A phone, a Mac, a tablet — each is a body it lives in. And the Miras on different devices can be **friends**.  
   
   No root. No custom ROM. <b>One APK on Android, one app on the Mac.</b>  
 </p>
@@ -55,14 +52,14 @@
 
 ## Install
 
-**Recommended: one-click build on [CodeFlying](https://www.codeflying.app/andee).** Open the page and tap the
+**Recommended: one-click build on [CodeFlying](https://www.codeflying.app/mira).** Open the page and tap the
 build button; what you get is an installable package with **the model and voice keys already configured** —
 scan to download, install, and it can talk. No building it yourself, no signing up for keys at three different
 providers. New accounts get a free allowance to get started; after that, tokens are purchased.
-(中文：[codeflying.net/andee](https://www.codeflying.net/andee))
+(中文：[codeflying.net/mira](https://www.codeflying.net/mira))
 
 ```text
-1. Open  https://www.codeflying.app/andee  →  build  →  scan to download
+1. Open  https://www.codeflying.app/mira  →  build  →  scan to download
 2. Install
 3. Grant Overlay, then Accessibility → the ball appears; tap it to talk
 ```
@@ -70,14 +67,14 @@ providers. New accounts get a free allowance to get started; after that, tokens 
 CodeFlying is a separate service with no direct relationship to this project; its own terms, pricing and data
 handling apply.
 
-**Or download a release.** Every [release](https://github.com/kuafuai/andee/releases/latest) carries a phone
+**Or download a release.** Every [release](https://github.com/Synxneuos/mira/releases/latest) carries a phone
 package and a Mac package, in English and in Chinese:
 
 | Device | Download | After installing |
 | --- | --- | --- |
-| Android phone / tablet (Android 11+) | `andee-<version>-en-android-arm64-v8a.apk` (almost every device) | grant Overlay, then Accessibility |
-| Mac, Apple silicon (macOS 14+) | `andee-<version>-en-mac-arm64.dmg` | open the dmg, drag Andee to Applications; allow Accessibility and Screen Recording when it asks |
-| Mac, Intel | `andee-<version>-en-mac-x64.dmg` | the same |
+| Android phone / tablet (Android 11+) | `mira-<version>-en-android-arm64-v8a.apk` (almost every device) | grant Overlay, then Accessibility |
+| Mac, Apple silicon (macOS 14+) | `mira-<version>-en-mac-arm64.dmg` | open the dmg, drag Mira to Applications; allow Accessibility and Screen Recording when it asks |
+| Mac, Intel | `mira-<version>-en-mac-x64.dmg` | the same |
 
 Release packages carry **no keys**: after installing, put your CodeFlying key (you get one when you sign up there)
 in ⚙ → **Backend**, or switch to On-device and enter your own model and voice keys. When a newer version is out,
@@ -116,9 +113,9 @@ here; what it can *do* comes after.
   thumb, it can do it.**
 - **Holds lines a prompt cannot talk it out of.** A stranger's notification cannot unlock the vault or grant  
   it new permissions — that refusal is in the dispatcher, not in the prompt.
-- **It has friends.** Pair two devices by scanning a QR code and the Andee on each can ask the other for
+- **It has friends.** Pair two devices by scanning a QR code and the Mira on each can ask the other for
   help — your phone hands a coding job to your Mac, your Mac asks the phone to order lunch. A friend can be
-  another device of yours, trusted like you, or **somebody else's Andee**: then its owner is asked before
+  another device of yours, trusted like you, or **somebody else's Mira**: then its owner is asked before
   anything happens, and the work runs where it cannot see your memory, your conversations or your vault.
 - **You can check all of it instead of trusting it.** No analytics SDK, no content telemetry, and the whole  
   agent loop is in this repository down to the guard rails — see  
@@ -167,7 +164,7 @@ are the same, in the same order.
 not on the same Wi-Fi — that last one needs a relay, and the link was built so one can be added without
 changing what travels over it.
 
-> **Before you install this.** Andee taps, types and acts on your behalf. It can complete a payment,  
+> **Before you install this.** Mira taps, types and acts on your behalf. It can complete a payment,  
 > send messages under your name, read your messages, contacts and location, and — with a robot dog  
 > attached — physically move. It is experimental, carries no warranty, and **what it does is your  
 > responsibility**, including a transfer to the wrong person. Data does leave the device: your speech  
@@ -238,7 +235,7 @@ archived beside it. The scrollback shows a card where those messages stood, offe
 summary left out, rather than answering from the summary or saying it never happened.
 
 **8. It behaves the same when nobody is watching.**  
-After a conversation goes quiet the device sends a `(to yourself …)` turn — Andee reviewing the  
+After a conversation goes quiet the device sends a `(to yourself …)` turn — Mira reviewing the  
 conversation alone, *"nobody is watching you, nobody is waiting for you to answer."* Two rules:  
 make no sound, and do not touch the device. It closes out its own promises, notes which habits are  
 worth turning into a scene next time, and ends empty-handed rather than inventing something to record.
@@ -274,12 +271,12 @@ the user is true. And when something is genuinely wrong, the mask comes off.
 ### Show and tell
 
 **11. Talk, type, or show it a photo.**  
-Tap the ball, or say "Hey Andee" (fully offline wake word). Prefer typing? The typing field takes  
+Tap the ball, or say "Hey Mira" (fully offline wake word). Prefer typing? The typing field takes  
 up to six photos — from the camera or the gallery — with or without words.
 
-Tap the ball or use the wake word, then say "Exit Andee" or "Take a break" to stop the task and close Andee.
+Tap the ball or use the wake word, then say "Exit Mira" or "Take a break" to stop the task and close Mira.
 Automatic follow-up listening cannot trigger exit; exit is declined while a meeting is recording.
-The microphone and wake listener stop. Tap the app icon to reopen; Android accessibility reconnection may also restart Andee.
+The microphone and wake listener stop. Tap the app icon to reopen; Android accessibility reconnection may also restart Mira.
 
 **12. Answers you can keep.**  
 Anything structured — a comparison, a plan, meeting minutes — comes back as a page it writes and  
@@ -292,7 +289,7 @@ for the hour, writing a verbatim transcript to disk as it goes, then turns it in
 ### Body
 
 **13. A body, not a screen.**  
-The device is what Andee wears. Camera as eyes, ASR plus an offline wake-word as ears, the  
+The device is what Mira wears. Camera as eyes, ASR plus an offline wake-word as ears, the  
 accessibility service as hands, and — when one is attached — a robot dog as **a leg**. The prompt  
 is explicit that it is not a pet on a remote: *"you have not gained a subordinate, you have gained  
 a body part."* Bodies differ, so it checks rather than assumes.
@@ -320,11 +317,11 @@ makes "any smart hardware as a body" a fact here rather than an aspiration.
 The agent loop, the prompt, the notebook format, the scenes and the guard rails live in `core/` and are the
 same code on both. What the Mac adds is its own hands: the accessibility tree of any app, real mouse and
 keyboard events, screenshots through ScreenCaptureKit, and **a terminal** — every command classified by risk,
-run in a sandbox that cannot read Andee's own data, deletions sent to a trash it can undo, and anything
+run in a sandbox that cannot read Mira's own data, deletions sent to a trash it can undo, and anything
 destructive asked about first. The window looks and behaves like the phone's card: the ball on top, the
 conversation underneath, the same gestures.
 
-**17. Friends: Andees that ask each other for help.** *(new)*  
+**17. Friends: Miras that ask each other for help.** *(new)*  
 Pairing is a QR code: one device shows it, the other scans it. The code dies in two minutes or three wrong
 tries, and the QR names the shower's key, so the scanner pins that key and no other; after that every link
 is a signed, encrypted channel with forward secrecy. To the model a friend is like a tool on a shelf — each
@@ -361,7 +358,7 @@ cache still hits; it rebuilds the tool table every turn; and it calls the model 
 one `CommandDispatcher`; a reply without any ends the turn. The result comes back out through six  
 channels — speech, text, a full-screen page, saved artifacts, long text, and physical motion.
 
-![Andee architecture](docs/architecture.svg)
+![Mira architecture](docs/architecture.svg)
 
 Everything drawn here is in this repository, down to the guard rails — see  
 [Why you can check this instead of trusting it](#why-you-can-check-this-instead-of-trusting-it).
@@ -375,8 +372,8 @@ Android steps are further down, under [Provisioning](#provisioning).
 for `swiftc`, and the same JDK 17–20):
 
 ```bash
-./gradlew :desktop:createDistributable   # → desktop/build/compose/binaries/main/app/Andee.app
-cp -R desktop/build/compose/binaries/main/app/Andee.app /Applications/
+./gradlew :desktop:createDistributable   # → desktop/build/compose/binaries/main/app/Mira.app
+cp -R desktop/build/compose/binaries/main/app/Mira.app /Applications/
 # then: grant Accessibility and Screen Recording when it asks (System Settings → Privacy & Security),
 # and put your model key in Settings → Backend, as on the phone.
 ```
@@ -387,15 +384,15 @@ time — [desktop/README-signing.md](desktop/README-signing.md) sets up one fixe
 ### Packaging it for someone else — both chips
 
 `createDistributable` packs for **the machine that runs it**: the launcher, the embedded runtime and
-the native pieces (`libandeemac.dylib`, `andee-trash`, the LWJGL natives) all follow the `os.arch` of
+the native pieces (`libmiramac.dylib`, `mira-trash`, the LWJGL natives) all follow the `os.arch` of
 the Gradle JVM. There is no cross-compile switch — `os.arch` is read straight off the JVM — so an
 Apple silicon build will not start on an Intel Mac, and the other way round. Ship two packages, as
 every other Mac app does:
 
 | Chip | Package to hand over | Built with |
 | --- | --- | --- |
-| Apple silicon (M1–M4) | `Andee-1.0.0-arm64.dmg` | any JDK 17–20 |
-| Intel | `Andee-1.0.0-x64.dmg` | an x86_64 JDK 17, under Rosetta |
+| Apple silicon (M1–M4) | `Mira-1.0.0-arm64.dmg` | any JDK 17–20 |
+| Intel | `Mira-1.0.0-x64.dmg` | an x86_64 JDK 17, under Rosetta |
 
 An Apple silicon Mac can build **both**: the architecture is decided by whichever JVM runs Gradle, and
 Rosetta runs an x86_64 one. Take Temurin's macOS x64 tarball rather than Homebrew — the `openjdk@17`
@@ -408,7 +405,7 @@ this dependency before jpackage writes a dmg:
 ```bash
 python3 -m venv desktop/build/dmg-venv
 desktop/build/dmg-venv/bin/python -m pip install -r desktop/dmg/requirements.txt
-export ANDEE_DMG_PYTHON="$PWD/desktop/build/dmg-venv/bin/python"
+export MIRA_DMG_PYTHON="$PWD/desktop/build/dmg-venv/bin/python"
 ```
 
 The committed `desktop/dmg/background.png` is used as-is during packaging. To
@@ -416,7 +413,7 @@ regenerate it after editing the artwork or caption, install the optional Pillow
 dependency with
 `desktop/build/dmg-venv/bin/python -m pip install -r desktop/dmg/requirements-background.txt`
 and run
-`ANDEE_REGENERATE_BACKGROUND=1 bash desktop/dmg/make-dmg.sh ...`.
+`MIRA_REGENERATE_BACKGROUND=1 bash desktop/dmg/make-dmg.sh ...`.
 `packageReleaseDmg` and `notarizeDmg` are not part of this drag-to-install
 packaging path; verify their image layout separately before distributing one.
 
@@ -427,11 +424,11 @@ mkdir -p ~/jdk-x64 && tar -xzf /tmp/jdk17-x64.tar.gz -C ~/jdk-x64
 
 ./gradlew --stop                                    # the daemon already running is arm64
 JAVA_HOME=~/jdk-x64/jdk-17.0.20.1+1/Contents/Home \
-  ./gradlew :desktop:packageDmg --no-daemon         # → Andee-1.0.0.dmg (x86_64)
-./gradlew --stop && ./gradlew :desktop:packageDmg   # → Andee-1.0.0.dmg (arm64)
+  ./gradlew :desktop:packageDmg --no-daemon         # → Mira-1.0.0.dmg (x86_64)
+./gradlew --stop && ./gradlew :desktop:packageDmg   # → Mira-1.0.0.dmg (arm64)
 ```
 
-Both architectures write the **same** file, `desktop/build/compose/binaries/main/dmg/Andee-1.0.0.dmg`, so the
+Both architectures write the **same** file, `desktop/build/compose/binaries/main/dmg/Mira-1.0.0.dmg`, so the
 second build overwrites the first — rename it to the name in the table above before building the other one.
 
 **Two failures here are silent.**
@@ -452,8 +449,8 @@ word. Rename as you go. (The `1.0.0` in that name is the macOS bundle version �
 Check all four binaries before shipping; they have to agree:
 
 ```bash
-cd desktop/build/compose/binaries/main/app/Andee.app
-lipo -archs Contents/MacOS/Andee
+cd desktop/build/compose/binaries/main/app/Mira.app
+lipo -archs Contents/MacOS/Mira
 lipo -archs Contents/runtime/Contents/Home/lib/server/libjvm.dylib
 lipo -archs Contents/runtime/Contents/Home/lib/libjli.dylib
 lipo -archs Contents/app/libskiko-macos-*.dylib
@@ -640,8 +637,8 @@ that needs it, is in **[docs/permissions.md](docs/permissions.md)**
 *Why:* the entire UI — ball, subtitles, settings panel — is a `TYPE_APPLICATION_OVERLAY` layer added  
 through `WindowManager`. There is no Activity home screen for it to live in instead.
 
-*How:* Settings → Apps → Andee → Permissions → Display over other apps. Or Settings → Apps &  
-notifications → Special access → Display over other apps → Andee → on. The first launch usually  
+*How:* Settings → Apps → Mira → Permissions → Display over other apps. Or Settings → Apps &  
+notifications → Special access → Display over other apps → Mira → on. The first launch usually  
 raises a prompt, and tapping "go to settings" from it is the quickest route.
 
 *Verify:* restart the app once the grant is in — the ball should be there immediately.
@@ -659,7 +656,7 @@ What the manifest declares (`res/xml/accessibility_service_config.xml`):
 - `canRetrieveWindowContent` — read the whole UI tree
 - `canTakeScreenshot` — system screenshots (API 30+)
 
-*How:* Settings → Accessibility → Downloaded services / Installed services → **Andee** → on. Android  
+*How:* Settings → Accessibility → Downloaded services / Installed services → **Mira** → on. Android  
 then shows the large red warning that the service can view everything you do; confirm it. Some vendor  
 ROMs (Xiaomi / Huawei / HONOR) additionally want "allow background pop-ups" or "show on lock screen" —  
 turn those on too.
@@ -672,28 +669,28 @@ report success and a filename.
 force-stop. That is ROM behaviour, and not something the app can prevent.
 
 *Some apps hand it a blank screen instead of their real UI.* They serve **every**  
-accessibility client an empty placeholder, not just Andee — and it is not Andee's fault:  
+accessibility client an empty placeholder, not just Mira — and it is not Mira's fault:  
 the system's own `uiautomator dump` gets the same blank page. The one we measured is WeChat, on a  
 Xiaomi Pad 5 with MIUI and WeChat 8.0.78: it only shows its real UI tree when MIUI's hidden  
 **`MiuiEnhanceTBService`** is enabled. That is a TalkBack companion service, and it has no switch  
 in Settings. With it on, the same chat screen dumps 219 nodes. With it off, it dumps none. MIUI  
-also turns that service on and off by itself whenever Andee is re-bound (after a reinstall, a  
+also turns that service on and off by itself whenever Mira is re-bound (after a reinstall, a  
 crash, or a toggle). That is why WeChat could be read **sometimes but not always**, and why  
-toggling Andee never actually fixed it. Matching the helper's accessibility config does not help  
+toggling Mira never actually fixed it. Matching the helper's accessibility config does not help  
 either: WeChat checks which service is asking, not what it asked for.
 
-What Andee does about it (`screen/TreeHelper.kt`): when a dump comes back blank like this, Andee  
+What Mira does about it (`screen/TreeHelper.kt`): when a dump comes back blank like this, Mira  
 **adds** that service to the enabled list and dumps again. It never removes anything. It does  
 nothing on devices that don't have that component. It writes a line in the chat history so you  
 know your system settings changed. It also tries at most once a minute, so if you turn the  
-service off on purpose, Andee won't keep turning it back on. Writing that list needs one grant  
+service off on purpose, Mira won't keep turning it back on. Writing that list needs one grant  
 that only adb can give. It is the same grant the ADBKeyboard fallback uses:
 
 ```bash
-adb shell pm grant net.kuafuai.andee android.permission.WRITE_SECURE_SETTINGS
+adb shell pm grant net.synxneuos.mira android.permission.WRITE_SECURE_SETTINGS
 ```
 
-Without the grant, nothing breaks. On the blank screens, Andee works from screenshots and  
+Without the grant, nothing breaks. On the blank screens, Mira works from screenshots and  
 coordinates instead of the element list. That is slower and less precise, but the task still  
 gets done.
 
@@ -702,7 +699,7 @@ gets done.
 *Why:* ASR is streaming, so it needs the PCM stream upstreamed.
 
 *How:* the first tap on the ball triggers ASR and Android asks — "while using the app" and "always"  
-both work. If it was refused earlier: Settings → Apps → Andee → Permissions → Microphone → Allow.
+both work. If it was refused earlier: Settings → Apps → Mira → Permissions → Microphone → Allow.
 
 *Verify:* tap the ball once. `listening…`, or live ASR text appearing in the subtitle line, means it  
 is through.
@@ -745,12 +742,12 @@ fact-check that overturned a wrong assumption about phone harnesses, the plan th
 notebook, and the open-source readiness audit that found the device serial numbers in git history.  
 If you want to see how the decisions were made rather than only what was decided, read those.
 
-## Using Andee
+## Using Mira
 
-- **Online — no local build, no token setup.** **[codeflying.app](https://www.codeflying.app/andee)** ·  
-  **[codeflying.net](https://www.codeflying.net/andee)** (Chinese) — a general platform for describing an app  
+- **Online — no local build, no token setup.** **[codeflying.app](https://www.codeflying.app/mira)** ·  
+  **[codeflying.net](https://www.codeflying.net/mira)** (Chinese) — a general platform for describing an app  
   in words and having it developed and published. **A separate service, not part of this project.**  
-  Describe the Andee you want, and it hands you an installable package with the keys already  
+  Describe the Mira you want, and it hands you an installable package with the keys already  
   configured — nothing to compile locally, and nothing about Android to understand first. A free  
   token allowance gets you started; it is finite, and once it runs out, tokens are purchased.
 - **Self-hosted.** Clone, build, install. See [Build from source](#build-from-source) and the provisioning  
@@ -775,7 +772,7 @@ Pure Kotlin, no Compose; the whole thing hangs off two pillars, `WindowManager` 
 | Java / Kotlin JVM target  | 1.8                 | `sourceCompatibility` 1.8, `jvmTarget = '1.8'`                                            |
 | **Build JDK**             | **17–20**           | see [Which JDK](#which-jdk) — this is the step people get stuck on                        |
 | versionCode / versionName | 23 / 0.11.0          | see [CHANGELOG.md](CHANGELOG.md) for the policy                                           |
-| applicationId / namespace | `net.kuafuai.andee` | never changed from the template. It affects nothing                                       |
+| applicationId / namespace | `net.synxneuos.mira` | never changed from the template. It affects nothing                                       |
 
 **Runtime dependencies** (`app/build.gradle`):
 
@@ -924,7 +921,7 @@ For a first install, this order is the shortest path:
 
 1. Install the APK
 2. Go straight to "display over other apps" and grant the overlay → come back and the ball is there
-3. Go to Accessibility → enable Andee
+3. Go to Accessibility → enable Mira
 4. Tap the ball, and allow the microphone prompt
 5. Open the ⚙ on the ball. In **Advanced**, turn on **Show cloud option** (the **Cloud** tab is  
    hidden by default). Go back to **Backend**, flip the picker to **Cloud**, set `hub_url` =  
@@ -942,7 +939,7 @@ If any step does not line up, go back to that section's **Verify**.
 ## Wake word
 
 If you would rather not tap the ball every time, teach it your voice: **⚙ → wake word → record wake  
-word**, and say the phrase you want to use three times as prompted (for example "Hey Andee" — any  
+word**, and say the phrase you want to use three times as prompted (for example "Hey Mira" — any  
 other phrase works too, as long as you say the same one each time). After that, saying it does exactly
 what tapping the ball does — **the screen does not have to be on**, unless you turn that off.
 
@@ -963,7 +960,7 @@ A few things worth knowing first:
 - **It listens with the screen off too, and that is a setting you can turn off.** Screen off no longer
   hands the microphone back, because a screen being off is the normal state of a phone in a pocket —
   **⚙ → wake word → the "listen while locked" row** controls it and ships **on**. The cost is that the
-  microphone stays open and so does the status-bar indicator below. Andee mid-sentence, and Andee
+  microphone stays open and so does the status-bar indicator below. Mira mid-sentence, and Mira
   recording you, still hand it back either way: a conversation always outranks the wake word. With the
   screen locked it can hear and answer, but it will not pretend it can act — screen and app-launch
   tools refuse, and say why.
@@ -1006,7 +1003,7 @@ The tools the brain gets:
 2. Plug it into this device with an OTG cable. **The dongle's 3.3V rail has to be stable** — the
    NRF24L01 draws current in bursts, so put a 10–100µF capacitor next to the module, or you will get
    "the command went out but the dog did not move".
-3. The first `dog_*` call raises "Allow Andee to access this USB device?" — tap **Allow**. Not tapping
+3. The first `dog_*` call raises "Allow Mira to access this USB device?" — tap **Allow**. Not tapping
    it is the same as not being plugged in.
 4. `dog_status`'s `banner` repeats what the dongle said at startup: `READY` means the dongle and its
    radio are both fine. `ERR: NRF24L01 not responding` is a **dongle-side wiring or power problem**,
@@ -1075,7 +1072,7 @@ core/                   shared by both bodies: LocalBrain, LocalPrompt, ToolSche
 desktop/                the Mac app (Compose Desktop): window, floating ball, mac/ (accessibility, input,
                         screen, notifications), shell/ (the sandboxed terminal), voice/, native/ (Swift bridge)
 app/                    the Android app (Kotlin, no Compose)
-  src/main/java/net/kuafuai/andee/
+  src/main/java/net/synxneuos/mira/
     BodyCoreService.kt     the body: ball, card, voice, brain socket, scrollback — read this first
     ScreenBodyService.kt   the accessibility service — a shim that hands over the screen capability
     brain/                 the agent loop — LocalBrain, LocalPrompt (the character's rulebook:
@@ -1101,7 +1098,7 @@ CLAUDE.md               architecture notes written for AI coding assistants (Eng
 — the odd workaround, the thing it turned out to be able to do, the one that made you laugh. It does
 not have to be useful.
 
-Post it in **[Show and tell](https://github.com/kuafuai/andee/discussions/categories/show-and-tell)**,
+Post it in **[Show and tell](https://github.com/Synxneuos/mira/discussions/categories/show-and-tell)**,
 one case per post, so each one can be discussed on its own. Three things make a post useful to the
 next person:
 
@@ -1140,7 +1137,7 @@ Blur or avoid anything private — yours or anyone else's — before it goes up.
 ### Contributors
 
 <!-- Replace with a real contributors image once the project has a public home.
-     GitHub: <img alt="Contributors" src="https://contrib.rocks/image?repo=kuafuai/andee" /> -->
+     GitHub: <img alt="Contributors" src="https://contrib.rocks/image?repo=Synxneuos/mira" /> -->
 
 <!-- Demo GIF, demo video and stills — the three assets this README still needs.
      Capture all of them on a real device; an emulator makes this app look like nothing.
@@ -1158,10 +1155,10 @@ Blur or avoid anything private — yours or anyone else's — before it goes up.
 | Issue tracker | Reproducible bugs, engineering work |
 | Show and tell | What you built with it, fun or not — see [Showcase](#showcase) |
 | Security | Vulnerabilities — privately, never in a public issue. See [SECURITY.md](SECURITY.md) |
-| Product / online | Trying Andee without building it yourself — [codeflying.app](https://www.codeflying.app/andee) · [codeflying.net](https://www.codeflying.net/andee) |
-| WeChat | Add Andee as a friend — scan the code below, or tap the WeChat icon at the foot of the chat |
+| Product / online | Trying Mira without building it yourself — [codeflying.app](https://www.codeflying.app/mira) · [codeflying.net](https://www.codeflying.net/mira) |
+| WeChat | Add Mira as a friend — scan the code below, or tap the WeChat icon at the foot of the chat |
 
-<p align="center"><img src="images/wechat-qr.jpg" width="220" alt="Scan with WeChat to add Andee as a friend"></p>
+<p align="center"><img src="images/wechat-qr.jpg" width="220" alt="Scan with WeChat to add Mira as a friend"></p>
 
 ## Security disclosure
 

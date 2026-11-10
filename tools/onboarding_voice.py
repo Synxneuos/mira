@@ -7,7 +7,7 @@ once, and shipped in the APK under app/src/main/assets/onboarding/<lang>/<id>.mp
 OnboardingUi plays the clip for the page it is on (when sound is on) and knows
 the ids below, never the words — so this table is the only copy of the script.
 
-Andee's own voice: the Andee look names no speaker, so it speaks with
+Mira's own voice: the Mira look names no speaker, so it speaks with
 VoiceConfig.TTS_SPEAKER, and that is what is used here. Change one, change both.
 
     VOLC_TTS_KEY=<火山 API key> python3 tools/onboarding_voice.py [id ...]
@@ -28,7 +28,7 @@ SPEAKER = "zh_female_vv_uranus_bigtts"  # VoiceConfig.TTS_SPEAKER
 OUT = os.path.join(os.path.dirname(__file__), "..", "app", "src", "main", "assets", "onboarding")
 
 # id -> (zh, en). Ids are OnboardingUi's: a page name, or perm_<SelfCheck finding id>.
-# The prelude (language and sound) has no line: it is where the user decides whether Andee speaks.
+# The prelude (language and sound) has no line: it is where the user decides whether Mira speaks.
 LINES = {
     "intro": (
         "我会住进你的设备，成为它的灵魂。别的助手都在等你开口，我不用等，我一直都在。",
@@ -75,7 +75,7 @@ LINES = {
 
 def synth(key: str, text: str) -> bytes:
     body = {
-        "user": {"uid": "andee-onboarding"},
+        "user": {"uid": "mira-onboarding"},
         "req_params": {
             "text": text,
             "speaker": SPEAKER,

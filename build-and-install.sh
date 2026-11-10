@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# 打包 andee 并装到平板。
+# 打包 mira 并装到平板。
 #
 # 一把过：查设备 → 验后端连不连得通 → 打包 → 装对应架构的包。
 #
@@ -115,7 +115,7 @@ apk="app/build/outputs/apk/debug/app-${abi}-debug.apk"
 [ -f "$apk" ] || apk=$(ls app/build/outputs/apk/debug/app-*-debug.apk 2>/dev/null | head -1)
 echo "产物  $apk"
 
-grep -E 'CODEFLYING_(DOMAIN|SSL)' app/build/generated/source/buildConfig/debug/net/kuafuai/andee/BuildConfig.java \
+grep -E 'CODEFLYING_(DOMAIN|SSL)' app/build/generated/source/buildConfig/debug/net/synxneuos/mira/BuildConfig.java \
   | sed 's/^/      /'
 
 # ---- 5. 安装 --------------------------------------------------------------
@@ -134,7 +134,7 @@ elif echo "$out" | grep -qE "no devices|device offline|device unauthorized"; the
   exit 1
 elif echo "$out" | grep -q "signatures do not match"; then
   echo "签名对不上 —— 卸了重装（聊天记录和小本本会清）"
-  "$ADB" uninstall net.kuafuai.andee >/dev/null 2>&1 || true
+  "$ADB" uninstall net.synxneuos.mira >/dev/null 2>&1 || true
   "$ADB" install "$apk" 2>&1 | tail -1
 else
   echo "✗ 装不上"

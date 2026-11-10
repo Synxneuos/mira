@@ -5,9 +5,9 @@
 
 # Permissions
 
-This page explains why Andee asks for the permissions it asks for, what each one buys you, and what happens if you refuse it.
+This page explains why Mira asks for the permissions it asks for, what each one buys you, and what happens if you refuse it.
 
-The reason it is this detailed is straightforward: **the combination of permissions Andee requests overlaps heavily with the detection signature of an Android banking trojan** — accessibility + overlay + notification listener + SMS + call log + contacts + installed apps. Any security researcher who glances at the manifest will flag it. That is reasonable alarm, not a misjudgement.
+The reason it is this detailed is straightforward: **the combination of permissions Mira requests overlaps heavily with the detection signature of an Android banking trojan** — accessibility + overlay + notification listener + SMS + call log + contacts + installed apps. Any security researcher who glances at the manifest will flag it. That is reasonable alarm, not a misjudgement.
 
 So this page has exactly one job: **to separate "looks the same" from "is the same", and to make every claim checkable in the code.**
 
@@ -15,7 +15,7 @@ So this page has exactly one job: **to separate "looks the same" from "is the sa
 
 ## First, where the difference lies
 
-| | Typical Chinese app / malware | Andee |
+| | Typical Chinese app / malware | Mira |
 |---|---|---|
 | When permissions are requested | All at once, on first launch | **On demand** — only when you use the feature that needs one |
 | What happens when you refuse | The app is unusable / nagged repeatedly | **Feature degrades**, everything else keeps working, and it tells you why it could not do the thing |
@@ -55,14 +55,14 @@ The "What you get" column is the copy the app actually shows (`dev_perm_feature_
 | Boot<br>`RECEIVE_BOOT_COMPLETED` | Tasks survive a reboot | Rebuilding the `AlarmManager` alarms | After a reboot, due tasks stop reminding |
 | Battery optimisation exemption<br>`REQUEST_IGNORE_BATTERY_OPTIMIZATIONS` | Reminders arrive on time | Task scheduling | With the screen off, reminders arrive late |
 | Write secure settings<br>`WRITE_SECURE_SETTINGS` | Switch the input method, for the spare typing route | Prerequisite for the ADBKeyboard fallback | Nothing on Android 13 and above — typing goes through the accessibility input method. On Android 12 and below, **`type_text` fails outright**, and tells you exactly why. It will not pretend to succeed |
-| Wi-Fi state, multicast<br>`ACCESS_WIFI_STATE`<br>`CHANGE_WIFI_MULTICAST_STATE` | Finding your friends' Andees on the same Wi-Fi (mDNS) | `list_friends` / `ask_friend` | Normal permissions, granted at install. Nothing listens or announces until you add a friend or switch **Let other devices find me** on |
+| Wi-Fi state, multicast<br>`ACCESS_WIFI_STATE`<br>`CHANGE_WIFI_MULTICAST_STATE` | Finding your friends' Miras on the same Wi-Fi (mDNS) | `list_friends` / `ask_friend` | Normal permissions, granted at install. Nothing listens or announces until you add a friend or switch **Let other devices find me** on |
 
 > On **Android 13 and above you do not need this.** The app types through its own accessibility service's input connection: nothing to install, no keyboard to switch to, and your own keyboard stays active throughout.
 >
 > `WRITE_SECURE_SETTINGS` is the odd one out: it **does not take effect on install — you must grant it manually over adb**:
 >
 > ```bash
-> adb shell pm grant net.kuafuai.andee android.permission.WRITE_SECURE_SETTINGS
+> adb shell pm grant net.synxneuos.mira android.permission.WRITE_SECURE_SETTINGS
 > ```
 >
 > That is a platform restriction, not a choice this app made. On Android 12 and below it is what typing needs; above that it only matters for the fallback route, which is used when an editor refuses the normal channel.
@@ -73,8 +73,8 @@ The "What you get" column is the copy the app actually shows (`dev_perm_feature_
 
 These are outside the app. Android does not let an app flip them itself. Miss one and the matching feature is unavailable:
 
-1. **Overlay** — Settings → Apps → Andee → Permissions → Display over other apps
-2. **Accessibility service** — Settings → Accessibility → Installed services → Andee (you will get a big red warning box; that is the standard system flow)
+1. **Overlay** — Settings → Apps → Mira → Permissions → Display over other apps
+2. **Accessibility service** — Settings → Accessibility → Installed services → Mira (you will get a big red warning box; that is the standard system flow)
 3. **Microphone** — the system prompts for it the first time you tap the ball
 
 > Some vendor ROMs (Xiaomi / Huawei / HONOR) **turn accessibility back off** after every system update or force-stop. You have to re-enable it. That is ROM behaviour.
@@ -83,7 +83,7 @@ These are outside the app. Android does not let an app flip them itself. Miss on
 
 ## How credentials are kept (the question that most deserves asking)
 
-Andee has a vault (`config/Vault.kt`) for the account passwords you enter yourself. Three hard rules in the design:
+Mira has a vault (`config/Vault.kt`) for the account passwords you enter yourself. Three hard rules in the design:
 
 1. **Encrypted at rest.** AES/GCM, with the key generated and held by the Android KeyStore, **never leaving the device**. Even with the ciphertext in hand, another machine cannot decrypt it (there is a matching fallback in the code: "vault: decrypt failed — entries are unreadable on this install").
 2. **The model never receives the password itself.** In what `get_vault` returns, any field marked secret is omitted; the model can only call `fill_secret`, and **the device itself** types the password into the field. So the password does not pass through the model and does not enter its context.
@@ -113,7 +113,7 @@ The second row deserves spelling out: **a tool result is part of the conversatio
 
 **The last row deserves spelling out too, because it is a different kind of thing from the two above it.** Those two go to an endpoint *you* configured; this one comes to us. It carries the version number, the phone model, the brand, the Android release, the UI language, and a random ID this install generated for itself (`body-xxxxxxxx`, new on every reinstall — **not `ANDROID_ID`**). The server necessarily also sees your IP, from which it derives a country / region / city. **It does not carry**: conversation content, screen content, which apps you have installed, contacts, location, crash logs or an advertising ID.
 
-**It cannot be switched off, and that has to be said plainly.** The address is a constant compiled into `device/SelfCheck.kt` (`VERSION_API_BASE` = `https://api.heyandee.com`): there is no setting, no build flag, and no `local.properties` key for it. Turning it off means editing that line and rebuilding. The reason it is not configurable is that a check which can be silently misconfigured is a check that silently stops working — this one is meant to be on for everyone or off for everyone. So do not look for a switch in Settings; there is not one.
+**It cannot be switched off, and that has to be said plainly.** The address is a constant compiled into `device/SelfCheck.kt` (`VERSION_API_BASE` = `https://api.heymira.com`): there is no setting, no build flag, and no `local.properties` key for it. Turning it off means editing that line and rebuilding. The reason it is not configurable is that a check which can be silently misconfigured is a check that silently stops working — this one is meant to be on for everyone or off for everyone. So do not look for a switch in Settings; there is not one.
 
 **So "local mode" does not mean "local processing"** — it changes where the brain is, not the fact that data leaves the device. If you genuinely want data to stay in, you have to point `asr_endpoint` / `tts_endpoint` / `llm_base_url` / `hub_url` at a machine you control yourself.
 

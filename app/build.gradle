@@ -35,7 +35,7 @@ if (localPropsFile.exists()) {
 def CLI_NAME = [
     'CODEFLYING_DOMAIN': 'codeflyingDomain',
     'DEFAULT_LANG'     : 'defaultLang',
-    // Both shipping servers are HTTPS-only (measured: `baas.kuafuai.net` answers 200 on https
+    // Both shipping servers are HTTPS-only (measured: `baas.synxneuos.net` answers 200 on https
     // and 404 on http; `myapp.codeflying.app` answers 200 on https and does not connect at all
     // on http). It is part of the variant, so it is settable next to the domain rather than
     // left to whatever the properties file happened to hold.
@@ -118,7 +118,7 @@ gradle.taskGraph.whenReady { graph ->
 // nothing and fails silently — the exact shape of bug this is fixing.
 
 android {
-    namespace 'net.kuafuai.andee'
+    namespace 'net.synxneuos.mira'
     compileSdk 34
 
     buildFeatures {
@@ -127,7 +127,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "net.kuafuai.andee"
+        applicationId "net.synxneuos.mira"
         minSdk 30
         targetSdk 34
         versionCode 23

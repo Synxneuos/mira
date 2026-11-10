@@ -1,7 +1,7 @@
 // The macOS app: the shared brain from :core, a Compose Desktop window, and
 // the Mac body (screen, voice, shell) as it is built up. Packaged with
 // `./gradlew :desktop:createDistributable` into
-// desktop/build/compose/binaries/main/app/Andee.app.
+// desktop/build/compose/binaries/main/app/Mira.app.
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 
 plugins {
@@ -30,7 +30,7 @@ def lwjglNatives = (osArch == 'aarch64') ? 'natives-macos-arm64' : 'natives-maco
 def nativeOut = layout.buildDirectory.dir('native')
 tasks.register('buildTrashTool', Exec) {
     def src = file('native/trash.swift')
-    def out = nativeOut.get().file('andee-trash').asFile
+    def out = nativeOut.get().file('mira-trash').asFile
     inputs.file(src)
     outputs.file(out)
     doFirst { out.parentFile.mkdirs() }
@@ -38,8 +38,8 @@ tasks.register('buildTrashTool', Exec) {
 }
 // The bridge JNA loads: accessibility tree, input events, ScreenCaptureKit, workspace.
 tasks.register('buildBridge', Exec) {
-    def src = file('native/AndeeMac.swift')
-    def out = nativeOut.get().file('libandeemac.dylib').asFile
+    def src = file('native/MiraMac.swift')
+    def out = nativeOut.get().file('libmiramac.dylib').asFile
     inputs.file(src)
     outputs.file(out)
     doFirst { out.parentFile.mkdirs() }
@@ -148,7 +148,7 @@ dependencies {
     implementation 'org.java-websocket:Java-WebSocket:1.5.7'
     // Drawing the pairing QR code the phone scans. Pure Java, encoder only.
     implementation 'com.google.zxing:core:3.5.3'
-    // Calls into native/AndeeMac.swift.
+    // Calls into native/MiraMac.swift.
     implementation 'net.java.dev.jna:jna:5.14.0'
     // LWJGL: OpenGL and CGL for the ball's offscreen renderer (no GLFW — see BallRenderer).
     implementation 'org.lwjgl:lwjgl:3.3.4'
@@ -164,7 +164,7 @@ def macPackageVersion = '1.0.0'
 
 compose.desktop {
     application {
-        mainClass = 'net.kuafuai.andee.desktop.MainKt'
+        mainClass = 'net.synxneuos.mira.desktop.MainKt'
         nativeDistributions {
             targetFormats(TargetFormat.Dmg)
             packageName = macPackageName
@@ -178,7 +178,7 @@ compose.desktop {
             macOS {
                 // The phone's launcher character on a white tile, as an .icns (icon/Mira.icns).
                 iconFile.set(project.file('icon/Mira.icns'))
-                bundleID = 'net.kuafuai.andee.mac'
+                bundleID = 'net.synxneuos.mira.mac'
                 entitlementsFile.set(project.file('entitlements.plist'))
                 runtimeEntitlementsFile.set(project.file('entitlements.plist'))
                 // macOS shows these when Mira first asks; without them the request is refused silently.
@@ -209,20 +209,20 @@ compose.desktop {
 //   ./gradlew :desktop:probe --args='记住我喜欢芒果'
 tasks.register('probe', JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
-    mainClass = 'net.kuafuai.andee.desktop.ProbeKt'
+    mainClass = 'net.synxneuos.mira.desktop.ProbeKt'
     standardInput = System.in
 }
 
 tasks.named('test') {
     dependsOn('buildNative')
-    systemProperty 'andee.trashTool', layout.buildDirectory.file('native/andee-trash').get().asFile.path
+    systemProperty 'mira.trashTool', layout.buildDirectory.file('native/mira-trash').get().asFile.path
 }
 
 // One frame of the ball to a PNG, to check the desktop renderer without the window:
-//   ./gradlew :desktop:ballshot --args='HAPPY 336 /tmp/ball.png andee'
+//   ./gradlew :desktop:ballshot --args='HAPPY 336 /tmp/ball.png mira'
 tasks.register('ballshot', JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
-    mainClass = 'net.kuafuai.andee.desktop.BallShotKt'
+    mainClass = 'net.synxneuos.mira.desktop.BallShotKt'
 }
 
 // One fixed signing identity, so macOS keeps Accessibility and Screen Recording
@@ -232,13 +232,13 @@ tasks.register('ballshot', JavaExec) {
 //
 // The identity is the packager's alone (see desktop/README-signing.md); users of
 // the built app never need it. Without it the app stays ad-hoc and still builds.
-def signIdentity = providers.gradleProperty('andee.signing.identity').orElse('Andee Local Signing')
-def signKeychain = providers.gradleProperty('andee.signing.keychain')
-    .orElse("${System.getProperty('user.home')}/Library/Keychains/andee-signing.keychain-db")
-def signPasswordFile = file("${System.getProperty('user.home')}/Andee-signing/keychain-password")
+def signIdentity = providers.gradleProperty('mira.signing.identity').orElse('Mira Local Signing')
+def signKeychain = providers.gradleProperty('mira.signing.keychain')
+    .orElse("${System.getProperty('user.home')}/Library/Keychains/mira-signing.keychain-db")
+def signPasswordFile = file("${System.getProperty('user.home')}/Mira-signing/keychain-password")
 
 tasks.register('signApp') {
-    def app = layout.buildDirectory.dir('compose/binaries/main/app/Andee.app')
+    def app = layout.buildDirectory.dir('compose/binaries/main/app/Mira.app')
     def entitlements = file('entitlements.plist')
     onlyIf { file(signKeychain.get()).exists() }
     doLast {
@@ -252,11 +252,11 @@ tasks.register('signApp') {
                 '--sign', signIdentity.get(), app.get().asFile.path
         }
         exec { commandLine 'codesign', '--verify', '--deep', '--strict', app.get().asFile.path }
-        logger.lifecycle("Andee.app signed as '${signIdentity.get()}'")
+        logger.lifecycle("Mira.app signed as '${signIdentity.get()}'")
     }
 }
 // Render at 1x instead of 2x, for a machine that has to draw the window on the CPU
-// (-Dandee.software=true): at 2x a 1280x909-point window is 2560x1818 pixels of Skia
+// (-Dmira.software=true): at 2x a 1280x909-point window is 2560x1818 pixels of Skia
 // work per frame, at 1x a quarter of that.
 //
 // Opt in with -PoneX, and not by default: measured on this Mac, 1x bought no reliable
@@ -265,7 +265,7 @@ tasks.register('signApp') {
 // display then stretches a half-resolution image over the same area. A smaller window
 // buys the same pixels back without that trade (see defaultChatSize).
 tasks.register('patchInfoPlist') {
-    def app = layout.buildDirectory.dir('compose/binaries/main/app/Andee.app')
+    def app = layout.buildDirectory.dir('compose/binaries/main/app/Mira.app')
     def oneX = project.hasProperty('oneX')
     onlyIf { oneX && osArch != 'aarch64' && app.get().asFile.exists() }
     doLast {
@@ -279,7 +279,7 @@ tasks.register('patchInfoPlist') {
                 "/usr/bin/plutil -replace NSHighResolutionCapable -bool false '$plist' || " +
                 "/usr/bin/plutil -insert NSHighResolutionCapable -bool false '$plist'"
         }
-        logger.lifecycle('Andee.app renders at 1x (NSHighResolutionCapable=false)')
+        logger.lifecycle('Mira.app renders at 1x (NSHighResolutionCapable=false)')
     }
 }
 tasks.matching { it.name == 'createDistributable' }.configureEach { finalizedBy('patchInfoPlist') }
@@ -303,7 +303,7 @@ tasks.register('checkDmgTools', Exec) {
 }
 tasks.register('polishDmg', Exec) {
     dependsOn('createDistributable', 'signApp', 'checkDmgTools')
-    def app = layout.buildDirectory.dir('compose/binaries/main/app/Andee.app')
+    def app = layout.buildDirectory.dir('compose/binaries/main/app/Mira.app')
     def out = layout.buildDirectory.file("compose/binaries/main/dmg/${macPackageName}-${macPackageVersion}.dmg")
     commandLine 'bash',
         file('dmg/make-dmg.sh').path,
@@ -323,6 +323,6 @@ tasks.matching { it.name == 'packageDmg' }.configureEach {
 //   ./gradlew :desktop:uishot --args='chat 1020 820 /tmp/ui.png'
 tasks.register('uishot', JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
-    mainClass = 'net.kuafuai.andee.desktop.UiShotKt'
+    mainClass = 'net.synxneuos.mira.desktop.UiShotKt'
     jvmArgs '-Dapple.awt.UIElement=true'
 }

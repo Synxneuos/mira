@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Turn the device's grounding log into labelled mis-tap / hit pairs.
 
-  adb pull /sdcard/Android/data/net.kuafuai.andee/files/grounding ./grounding
+  adb pull /sdcard/Android/data/net.synxneuos.mira/files/grounding ./grounding
   ./tools/grounding_pair.py ./grounding                  # summary
   ./tools/grounding_pair.py ./grounding -o pairs.jsonl   # write the samples
   ./tools/grounding_pair.py ./grounding --pkg com.tencent.mm

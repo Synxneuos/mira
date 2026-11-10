@@ -1,6 +1,6 @@
 # Third-party notices
 
-Andee bundles the following third-party components. The list is generated, not hand-written — it enumerates the **resolved** dependency graph, so it includes transitive dependencies.
+Mira bundles the following third-party components. The list is generated, not hand-written — it enumerates the **resolved** dependency graph, so it includes transitive dependencies.
 
 Regenerate it with:
 

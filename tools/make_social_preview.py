@@ -3,10 +3,10 @@
 
 两份素材，各管一件事：
 
-  * 封面/社交预览的右侧主图 = `images/brand/andee-device.png`：一台躺着的手机，
+  * 封面/社交预览的右侧主图 = `images/brand/mira-device.png`：一台躺着的手机，
     角色坐在屏幕上 —— 讲的是"住进设备"，不是"一颗悬着的头"。
-  * 方形头像 = `images/brand/andee-head.png`：圆形裁切下只放得下头。
-    头部抠图和光晕补底在 `andee_head.py`，和启动图标共用同一套。
+  * 方形头像 = `images/brand/mira-head.png`：圆形裁切下只放得下头。
+    头部抠图和光晕补底在 `mira_head.py`，和启动图标共用同一套。
 
 ## 构图
 
@@ -37,7 +37,7 @@ from PIL import Image
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
-import andee_head as head  # noqa: E402
+import mira_head as head  # noqa: E402
 
 REPO = HERE.parent
 OUT_DIR = REPO / "images"
@@ -50,7 +50,7 @@ AVATAR = 512
 
 # 右侧主图（手机 + 坐在屏幕上的角色）的落位。它自带白边，所以按**内容框**裁，
 # DEV_PAD 是留给斜坡的白边宽度：斜坡全落在这圈白里，角色和手机一个像素都不透明。
-DEVICE_SRC = REPO / "images" / "brand" / "andee-device.png"
+DEVICE_SRC = REPO / "images" / "brand" / "mira-device.png"
 DEV_W = 720                       # 落到画布上的宽度（裁切后）
 DEV_RIGHT, DEV_BOTTOM = 1232, 636  # 右下角锚点
 DEV_TRIM = 30                     # 判"内容"的阈值：与白底的最大通道差
@@ -80,7 +80,7 @@ ACCENT = "#2F6BEA"
 
 EN = {
     "eyebrow": "ANDROID · AI AGENT",
-    "title": "Andee",
+    "title": "Mira",
     "tagline": ["It becomes the soul", "of the device."],
     "foot": ["Nineteen moods. Its own notebook.", "It reviews itself when nobody watches."],
     "flow": [("wave", "Listen"), ("wink", "Look"), ("think", "Think"),
@@ -89,7 +89,7 @@ EN = {
 }
 ZH = {
     "eyebrow": "安卓 · AI 智能体",
-    "title": "Andee",
+    "title": "Mira",
     "tagline": ["他会成为这台设备的", "主人。"],
     "foot": ["十九种情绪、一本只有他自己能读的笔记本。", "没人看着的时候，他会自己复盘。"],
     "flow": [("wave", "听"), ("wink", "看"), ("think", "想"),
@@ -309,7 +309,7 @@ def make_avatar():
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--tmp", default="/tmp/andee-social-preview")
+    ap.add_argument("--tmp", default="/tmp/mira-social-preview")
     args = ap.parse_args()
     tmp = Path(args.tmp)
     tmp.mkdir(parents=True, exist_ok=True)

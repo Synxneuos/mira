@@ -5,8 +5,8 @@
 
   * **自带 alpha 的插画**（`images/brand/illustrations/*.webp`，默认）：已经抠好的
     直通 alpha，直接当剪影用。
-  * **不透明的整图画稿**（`images/brand/andee-head.png`）：白底+光晕，得自己抠
-    （`andee_head.py`）。
+  * **不透明的整图画稿**（`images/brand/mira-head.png`）：白底+光晕，得自己抠
+    （`mira_head.py`）。
 
 判据就是源图的 mode 有没有 alpha —— 不是文件名。
 
@@ -55,7 +55,7 @@ import numpy as np
 from PIL import Image, ImageFilter
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-import andee_head as head  # noqa: E402
+import mira_head as head  # noqa: E402
 
 DENSITIES = [("mdpi", 1.0), ("hdpi", 1.5), ("xhdpi", 2.0), ("xxhdpi", 3.0), ("xxxhdpi", 4.0)]
 ADAPTIVE_DP = 108.0

@@ -22,9 +22,9 @@ from pathlib import Path
 # 仓库根目录按脚本自身位置推断。别写死绝对路径 —— 写死过一次，别人 clone 下来
 # 脚本第一行就指向一个不存在的目录，且报错是"文件读不到"，看不出是路径问题。
 ROOT = Path(__file__).resolve().parent.parent
-KT_LOOK = ROOT / "app/src/main/java/net/kuafuai/andee/ui/ball/BallLook.kt"
-KT_RENDERER = ROOT / "app/src/main/java/net/kuafuai/andee/ui/ball/EmotionBallRenderer.kt"
-KT_MOOD = ROOT / "app/src/main/java/net/kuafuai/andee/ui/ball/Mood.kt"
+KT_LOOK = ROOT / "app/src/main/java/net/synxneuos/mira/ui/ball/BallLook.kt"
+KT_RENDERER = ROOT / "app/src/main/java/net/synxneuos/mira/ui/ball/EmotionBallRenderer.kt"
+KT_MOOD = ROOT / "app/src/main/java/net/synxneuos/mira/ui/ball/Mood.kt"
 LAB = ROOT / "reports/ball-cutie-lab.html"
 
 # 参数名对应：实验室里叫什么 → Kotlin 里叫什么

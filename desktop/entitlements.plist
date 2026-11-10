@@ -3,11 +3,11 @@
 <!--
   The hardened runtime refuses these silently unless they are declared here:
   no microphone prompt ever appears, Apple Events to Calendar/Contacts fail,
-  and the JVM cannot run. Every key is something Andee does on purpose.
+  and the JVM cannot run. Every key is something Mira does on purpose.
 -->
 <plist version="1.0">
 <dict>
-    <!-- The JVM generates code at run time, and JNA loads Andee's own native bridge. -->
+    <!-- The JVM generates code at run time, and JNA loads Mira's own native bridge. -->
     <key>com.apple.security.cs.allow-jit</key>
     <true/>
     <key>com.apple.security.cs.allow-unsigned-executable-memory</key>

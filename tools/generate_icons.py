@@ -4,7 +4,7 @@ from PIL import Image, ImageDraw, ImageFilter
 from collections import deque
 
 def main():
-    src = r'c:\Users\Naquib\Downloads\andee\images\mira_concept_4_cozy_sprite.jpg'
+    src = r'c:\Users\Naquib\Downloads\mira\images\mira_concept_4_cozy_sprite.jpg'
     im = Image.open(src).convert('RGB')
     w_orig, h_orig = im.size
 
@@ -12,13 +12,13 @@ def main():
     os.makedirs('images/brand', exist_ok=True)
     head_im = im.resize((1254, 1254), Image.Resampling.LANCZOS)
     head_im.save('images/brand/mira-head.png', 'PNG')
-    head_im.save('images/brand/andee-head.png', 'PNG')
+    head_im.save('images/brand/mira-head.png', 'PNG')
     
     avatar_im = im.resize((512, 512), Image.Resampling.LANCZOS)
     avatar_im.save('images/avatar-org.png', 'PNG')
     os.makedirs('desktop/icon', exist_ok=True)
     avatar_im.save('desktop/icon/Mira.icns')
-    avatar_im.save('desktop/icon/Andee.icns')
+    avatar_im.save('desktop/icon/Mira.icns')
     print("Saved brand, avatar, and desktop icon assets")
 
     # Extract transparent foreground

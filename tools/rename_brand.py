@@ -9,15 +9,15 @@ def update_xml_strings(path):
         full = m.group(0)
         if 'codeflying' in full or 'trendshift' in full or 'http' in full:
             return full
-        return full.replace('Andee', 'Mira')
+        return full.replace('Mira', 'Mira')
 
     new_content = re.sub(r'<string\b[^>]*>.*?</string>', repl, content, flags=re.DOTALL)
 
-    if 'ball_look_mira' not in new_content and 'ball_look_andee' in new_content:
+    if 'ball_look_mira' not in new_content and 'ball_look_mira' in new_content:
         nl = '\r\n' if '\r\n' in new_content else '\n'
         new_content = new_content.replace(
-            f'<string name="ball_look_andee">Mira</string>',
-            f'<string name="ball_look_mira">Mira</string>{nl}    <string name="ball_look_andee">Mira</string>'
+            f'<string name="ball_look_mira">Mira</string>',
+            f'<string name="ball_look_mira">Mira</string>{nl}    <string name="ball_look_mira">Mira</string>'
         )
 
     with open(path, 'w', encoding='utf-8', newline='') as f:
@@ -35,9 +35,9 @@ def update_properties(path):
         if 'ball_look_mira=' in line:
             has_mira_look = True
         if not line.startswith('s_codeflying_url='):
-            line = line.replace('Andee', 'Mira')
+            line = line.replace('Mira', 'Mira')
         new_lines.append(line)
-        if line.startswith('ball_look_andee='):
+        if line.startswith('ball_look_mira='):
             if not has_mira_look:
                 new_lines.append(f'ball_look_mira=Mira{nl}')
                 has_mira_look = True

@@ -3,7 +3,7 @@
     <!--
         Shown under the service name in Settings → Accessibility, and again in
         the confirmation dialog. It is the one place the user is asked to hand
-        over screen access, so it says what Andee does with it in their own
+        over screen access, so it says what Mira does with it in their own
         language rather than naming the API.
     -->
     <string name="accessibility_service_description">开启后 Mira 才能看到屏幕上有什么，并代你点按、滑动、输入。桌面上会多一颗悬浮小球：点一下跟它说话，长按展开对话记录。</string>
@@ -186,7 +186,7 @@
     <string name="settings_brain_local_note">设备自己跑 agent loop，不连 Hub。没有 Key 就不会接管。</string>
     <string name="settings_codeflying_get_key">没有密钥？到下面的链接注册登录，复制你的密钥粘贴到下方输入框。新用户可免费获得额度。</string>
     <string name="settings_codeflying_open_site">打开 CodeFlying.net ›</string>
-    <string name="codeflying_url" translatable="false">https://www.codeflying.net/andee</string>
+    <string name="codeflying_url" translatable="false">https://www.codeflying.net/mira</string>
     <string name="settings_no_key_use_codeflying">没有密钥？点这里切换到 CodeFlying 配置</string>
     <string name="settings_codeflying_key">CodeFlying 密钥</string>
     <string name="common_copy">复制</string>
@@ -976,7 +976,7 @@
          报一下名字 —— 这个名字是给人看的，所以是资源，而不是 BallLook.name
          （那个是给日志和 diff 看的）。 -->
     <string name="ball_look_mira">Mira</string>
-    <string name="ball_look_andee">Mira</string>
+    <string name="ball_look_mira">Mira</string>
     <string name="ball_look_cream">小猫</string>
     <string name="ball_look_bajie">八戒</string>
     <string name="ball_look_rabbit">贱贱兔</string>

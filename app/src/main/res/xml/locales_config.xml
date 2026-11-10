@@ -8,10 +8,10 @@
     the picker inside the card — which is fine for us, but it is not the place a
     user looks first.
 
-    Two entries, matching [net.kuafuai.andee.config.VoiceConfig.LANG_ZH] and
+    Two entries, matching [net.synxneuos.mira.config.VoiceConfig.LANG_ZH] and
     LANG_EN. The system picker and our own picker both write through
     AppCompatDelegate, so they stay in agreement; see
-    [net.kuafuai.andee.i18n.AppLocale] for why the overlays need the extra step
+    [net.synxneuos.mira.i18n.AppLocale] for why the overlays need the extra step
     the system does not do for us.
 -->
 <locale-config xmlns:android="http://schemas.android.com/apk/res/android">

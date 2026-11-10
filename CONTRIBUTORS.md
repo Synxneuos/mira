@@ -8,4 +8,4 @@ Thank you to everyone who has contributed to **Mira**!
   - 3D ball renderer parameter customization
   - Multi-platform branding & launcher asset generation
   - Documentation & issue design
-- **[KuafuAI](https://github.com/kuafuai)** — Original Andee project foundation & inspirations
+- **[Synxneuos](https://github.com/synxneuos)** — Original Mira project foundation & inspirations

@@ -7,7 +7,7 @@
          anything the user did.
 
          No host is listed today. The version service moved to
-         https://api.heyandee.com and CodeFlying to https://baas.kuafuai.net,
+         https://api.heymira.com and CodeFlying to https://baas.synxneuos.net,
          so both cleartext holes were deleted rather than left behind: an
          exception for a host nobody calls only widens what the app will talk
          to in the clear. A build pointed at a plain-HTTP backend has to name

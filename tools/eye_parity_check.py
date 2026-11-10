@@ -51,7 +51,7 @@ import re
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-KT = ROOT / "app/src/main/java/net/kuafuai/andee/ui/ball/gl/Eye.kt"
+KT = ROOT / "app/src/main/java/net/synxneuos/mira/ui/ball/gl/Eye.kt"
 LAB = ROOT / "reports/ball-cutie-lab.html"
 
 

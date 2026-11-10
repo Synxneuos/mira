@@ -24,7 +24,7 @@ function rather than a bug. Please read the threat model below before reporting.
 **Report privately through GitHub Security Advisories:**
 
 ```
-https://github.com/kuafuai/andee/security/advisories/new
+https://github.com/Synxneuos/mira/security/advisories/new
 ```
 
 That link is the only reporting channel, on purpose: it is private, it is
@@ -86,7 +86,7 @@ boundaries of the current version, not undisclosed bugs.
 
 ### 1. The device-side WebSocket server is unauthenticated and binds to all interfaces
 
-`BodyWsServer` (`app/src/main/java/net/kuafuai/andee/net/BodyWsServer.kt`) is
+`BodyWsServer` (`app/src/main/java/net/synxneuos/mira/net/BodyWsServer.kt`) is
 started by `ScreenBodyService` and listens on `0.0.0.0:9008`. `onOpen()` accepts
 every incoming connection as a driver without any credential check.
 
@@ -152,7 +152,7 @@ that is a vulnerability — report it.
 
 ### 4. The vault is not bound to device unlock
 
-`Vault` (`app/src/main/java/net/kuafuai/andee/config/Vault.kt`) encrypts entries
+`Vault` (`app/src/main/java/net/synxneuos/mira/config/Vault.kt`) encrypts entries
 with AES/GCM using a key generated in the Android KeyStore. The key is not
 created with `setUserAuthenticationRequired`, so it does not require
 biometric or device-credential authentication to use.

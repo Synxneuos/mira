@@ -1,7 +1,7 @@
 import base64
 import os
 
-with open(r'c:\Users\Naquib\Downloads\andee\images\mira_avatar_options_grid.jpg', 'rb') as f:
+with open(r'c:\Users\Naquib\Downloads\mira\images\mira_avatar_options_grid.jpg', 'rb') as f:
     b64 = base64.b64encode(f.read()).decode('utf-8')
 
 html = f'''<!DOCTYPE html>
@@ -48,7 +48,7 @@ html = f'''<!DOCTYPE html>
 </body>
 </html>'''
 
-with open(r'c:\Users\Naquib\Downloads\andee\images\mira_avatar_options.html', 'w', encoding='utf-8') as f:
+with open(r'c:\Users\Naquib\Downloads\mira\images\mira_avatar_options.html', 'w', encoding='utf-8') as f:
     f.write(html)
 
 with open(r'C:\Users\Naquib\.gemini\antigravity\brain\eaf39170-d147-4c3e-80c4-8839d0ddb824\mira_avatar_options.html', 'w', encoding='utf-8') as f:

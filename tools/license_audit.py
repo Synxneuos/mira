@@ -131,7 +131,7 @@ def render(coords: dict, out: Path) -> tuple[int, int, list[str]]:
 
     L = []
     L.append("# Third-party notices\n")
-    L.append("Andee bundles the following third-party components. The list is generated, not hand-written — "
+    L.append("Mira bundles the following third-party components. The list is generated, not hand-written — "
              "it enumerates the **resolved** dependency graph, so it includes transitive dependencies.\n")
     L.append("Regenerate it with:\n")
     L.append("```bash")

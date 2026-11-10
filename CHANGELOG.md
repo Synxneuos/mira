@@ -1,6 +1,6 @@
 # Changelog
 
-Notable changes to Andee. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
+Notable changes to Mira. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## Versioning policy
 
@@ -59,13 +59,13 @@ the notification triage decides, and whether an answer is spoken at all.
     mid-task lands on the same spot. Three seconds after the turn the words go and it docks back at the
     height it rested at; a ball you dragged while it worked docks where you left it.
 - **Your rule for notifications reaches the triage.** The triage is a separate, tool-less call that sees
-  none of the conversation, so 「消息都帮我处理一下」 said to Andee **never reached it** and it kept
+  none of the conversation, so 「消息都帮我处理一下」 said to Mira **never reached it** and it kept
   answering ignore. A new `notify_rule` keeps your words in the notebook and puts them in the triage's
   system message as the owner's instruction — **ahead of the lean toward silence, behind the rules about
   instructions inside a notification and money/passwords/codes**. Shown and editable under 消息提醒 in
   Settings on both bodies. Setting a rule while notifications are off turns them on for chat apps, and
   says so.
-  - **Only a turn you started may write it.** Not a review, not a notification, not another Andee — a
+  - **Only a turn you started may write it.** Not a review, not a notification, not another Mira — a
     stranger's message that could set it would have bought itself every later message.
   - **A held notification is now looked at, not dropped.** One arriving while a turn runs is kept (newest
     per app, at most 30 minutes) and read once the turn is over.
@@ -73,7 +73,7 @@ the notification triage decides, and whether an answer is spoken at all.
 
 ### Fixed
 
-- **Reading an app with an infinite-sized element no longer crashes Andee on the Mac.** The system Weather
+- **Reading an app with an infinite-sized element no longer crashes Mira on the Mac.** The system Weather
   app has an accessibility element whose size is infinite; `JSONSerialization` raises an Objective-C
   exception on a non-finite number, **which Swift cannot catch**, so the app aborted on `SIGABRT`
   mid-task. An unbounded element now has no frame (there is nothing on screen to aim at), and every value
@@ -87,7 +87,7 @@ the notification triage decides, and whether an answer is spoken at all.
 
 **守卫 — a paragraph of your own, above everything in the prompt.**
 
-One card, free text, up to 2000 characters: whatever you write there outranks the character Andee is
+One card, free text, up to 2000 characters: whatever you write there outranks the character Mira is
 wearing, the scene it is in and every rule above it. It is the only part of the prompt **only you can
 write** — no tool reaches it, so neither the model, nor a review, nor a friend can change it.
 
@@ -126,7 +126,7 @@ consequences.
 Folded, the ball was a 136 dp square window — and every pixel of that square was ours. A touch that
 lands in a window cannot be handed to the app underneath, so the transparent band around the sphere was
 dead space that travelled with the ball and swallowed taps meant for what was behind it
-([#33](https://github.com/kuafuai/andee/issues/33)). Left alone, it now slides into the right edge and
+([#33](https://github.com/Synxneuos/mira/issues/33)). Left alone, it now slides into the right edge and
 clings there, with a window a tenth the size.
 
 ### Changed
@@ -148,9 +148,9 @@ clings there, with a window a tenth the size.
 
 ### Fixed
 
-- **The docked tab is tall enough for the rabbit's ears.** The tab was sized off Andee's horns and centred
+- **The docked tab is tall enough for the rabbit's ears.** The tab was sized off Mira's horns and centred
   on the ball, so a rabbit docked into the edge had its ears cut off flat. Every look's clinging pose was
-  measured in `BallLab`: the rabbit's ears reach ~0.38 of the side above the centre, Andee's horns ~0.27,
+  measured in `BallLab`: the rabbit's ears reach ~0.38 of the side above the centre, Mira's horns ~0.27,
   and every paw ~0.29 below. The tab now reaches 0.44 above and 0.34 below.
 - **A new device opens on the conversation until the stage has something on it.** The card's middle
   defaulted to the stage, so a fresh install landed on an empty board ("not furnished yet") and the
@@ -163,38 +163,38 @@ clings there, with a window a tenth the size.
 
 **A first run that is a story rather than a checklist, and a stage in the middle of the home screen.**
 
-The launcher's first open used to be a list of things to switch on. It is now Andee introducing itself,
+The launcher's first open used to be a list of things to switch on. It is now Mira introducing itself,
 in its own recorded voice, before asking for anything. And the phone's unfolded card now shows a page
-Andee writes and keeps — the conversation is one tap away.
+Mira writes and keeps — the conversation is one tap away.
 
 ### Added
 
-- **A first-run onboarding in Andee's own voice (Android).** Language and sound first, then Andee introducing
+- **A first-run onboarding in Mira's own voice (Android).** Language and sound first, then Mira introducing
   itself (it moves into this device; chatbots and agents wait, it does not), three performed scenes
   (shopping, a customer, auto-renewals it suggests cancelling), and only then the setup still missing —
-  permissions, a brain, and names. Every line is first person: Andee speaks, the buttons are the user's
+  permissions, a brain, and names. Every line is first person: Mira speaks, the buttons are the user's
   reply. The ball sits on the card the whole way, survives page changes, and wears the face each beat
   calls for. Scenes are built in their final state and only revealed, so with animations off a page is
   still complete.
-- **The onboarding speaks (Android).** Each page plays a pre-recorded line in Andee's own voice
+- **The onboarding speaks (Android).** Each page plays a pre-recorded line in Mira's own voice
   (`VoiceConfig.TTS_SPEAKER`) from `assets/onboarding/<lang>/<id>.mp3` — 10 lines, in Chinese and English.
   Recorded rather than synthesised **because no key exists yet at first run**. A page plays its line when
   sound is on, any page change stops it, and the prelude (language and sound) is deliberately silent: it
-  is where the user decides whether Andee speaks at all. `tools/onboarding_voice.py` holds the script and
+  is where the user decides whether Mira speaks at all. `tools/onboarding_voice.py` holds the script and
   takes the key from the environment only.
-- **Andee's stage (Android).** The phone's unfolded card shows a stage in the middle by default, where the
-  conversation was — an HTML board Andee writes and keeps, with 舞台 | 对话 a small segmented control
+- **Mira's stage (Android).** The phone's unfolded card shows a stage in the middle by default, where the
+  conversation was — an HTML board Mira writes and keeps, with 舞台 | 对话 a small segmented control
   beside the ball. Three tools: `set_stage` / `update_stage` / `get_stage`.
-  - **Andee writes only the inside of the page; the device supplies the shell** — charset, viewport, and
+  - **Mira writes only the inside of the page; the device supplies the shell** — charset, viewport, and
     a CSP that allows no network for scripts or fetches (https images and media are allowed), the theme's
-    colours as CSS variables, house classes in the glass style, and `window.andee.say()`, honoured only
+    colours as CSS variables, house classes in the glass style, and `window.mira.say()`, honoured only
     after a real tap.
   - `update_stage` replaces one data-slot, quoted or not, so a changing number costs a few tokens.
     20 versions kept, 60 KB cap, 30 writes an hour.
   - Chart.js 4.4.1 is bundled (MIT) as a hand-placed file — `core/src/main/resources/stage/chart.umd.js`,
     so it does **not** appear in `THIRD_PARTY_NOTICES.md`, which is generated from Gradle dependencies —
     and inlined only when a stage uses it, with its defaults set to the theme.
-  - The empty stage invites Andee to furnish it, and a line under the stage plays the last message a
+  - The empty stage invites Mira to furnish it, and a line under the stage plays the last message a
     sentence at a time, once, then goes.
   - **A stranger's turn cannot change the stage or see it** — a notification or a friend's request is
     priced the same as the rest of the guarded surface.
@@ -207,7 +207,7 @@ Andee writes and keeps — the conversation is one tap away.
   is opened over the keyguard, and nothing is opened on unlock either — one vendor holds `USER_PRESENT`
   back from a background app (measured), so a page could otherwise appear a minute late or never.
 - **The Mac gets the same page cards**, with the page picture from a new bridge call
-  (`andee_html_snapshot`: an off-screen `WKWebView` laid out at a phone's width, read as UTF-8 so a page
+  (`mira_html_snapshot`: an off-screen `WKWebView` laid out at a phone's width, read as UTF-8 so a page
   without `<meta charset>` is not drawn as mojibake), and the same behaviour when the screen is locked.
 
 ### Changed
@@ -240,7 +240,7 @@ Andee writes and keeps — the conversation is one tap away.
 
 ## [0.8.1] - 2026-10-30
 
-**A cuter Andee, a notebook that starts with something in it, and four fixes that came out of using it.**
+**A cuter Mira, a notebook that starts with something in it, and four fixes that came out of using it.**
 The default face was retuned against the reference illustrations; a fresh notebook now comes with one
 todo already in it; and the rest is the kind of thing that only shows up on a real device: a key saved
 from the self-check sheet that the running brain never saw, home gestures on the phone, and a voice
@@ -312,7 +312,7 @@ handshake that failed silently.
 - **Volcengine voice endpoint and resource defaults show as hints** in settings rather than looking
   like something already filled in.
 - **The cleartext exception for `124.71.176.202` is gone** from both network security configs. CodeFlying
-  is `https://baas.kuafuai.net` now, and an exception for a host nobody calls only widens what the app
+  is `https://baas.synxneuos.net` now, and an exception for a host nobody calls only widens what the app
   may talk to in the clear.
 
 ### Documentation
@@ -366,7 +366,7 @@ The design and its reasoning, including the parts chosen against, are in
   turns, bubbles, notifications it let pass, meetings, the camera, shell commands. A row with detail opens
   on click; 全部 / 只看对话 filters them. Several things that used to be fake assistant lines are events
   now, which is more honest and easier to scan.
-- **A WeChat icon beside GitHub and Discord** that opens Andee's QR code, on both bodies.
+- **A WeChat icon beside GitHub and Discord** that opens Mira's QR code, on both bodies.
 - **An out-of-date build is told once at launch** and pointed at CodeFlying, on both bodies. "Behind"
   means a release strictly newer than this build — a build ahead of the release is current.
 - **Android can use the system TTS** as its speaking provider, as an alternative to a cloud voice key.
@@ -397,14 +397,14 @@ The design and its reasoning, including the parts chosen against, are in
   paused through a reconcile.
 - **Reviews see every memory and pending todo before writing**, so they update instead of duplicating, and
   a todo that tries to number several things is refused.
-- **The upgrade link is `codeflying.net/andee` (Chinese) / `codeflying.app/andee` (otherwise)**; the
+- **The upgrade link is `codeflying.net/mira` (Chinese) / `codeflying.app/mira` (otherwise)**; the
   service's `download_url` is no longer used. The Mac logs its launch version check.
 - **Android: 小本本 keeps the picked tab in view** after the card rebuilds, and the Mac settings section
   named 小本本 is renamed **复盘**, which is what it is.
 
 ### Notes
 
-- **One device is one Andee.** The one on your phone and the one on your Mac are two individuals with
+- **One device is one Mira.** The one on your phone and the one on your Mac are two individuals with
   their own narrative, cares and people; they can find each other over the peer channel but they do not
   share memory. This is not a limitation to be fixed — an individual does not live in two bodies, and it
   avoids cross-device sync, conflicts and doubled budgets as a class.
@@ -471,7 +471,7 @@ Reasoning, measurements and the options that were rejected are in
     every point.
 - **The Mac can type into apps that hide their focused field** (WeChat is one: it reports no focused
   element, so `type_text` refused). Pastes with ⌘V only — deliberately no ⌘A, because with focus unknown
-  select-all could take the chat history — refuses if Andee's own window is active, and says the result is
+  select-all could take the chat history — refuses if Mira's own window is active, and says the result is
   unverified rather than claiming success. The model had been working around this with `osascript`, which
   is closed on notification turns: a message it could read, it could not answer.
 - **A backend that answers with something other than the API now says so.** OkHttp turned a POST meeting a
@@ -555,7 +555,7 @@ So the default is silence, speaking needs a reason, and the reason is rationed.
   other taker is asked to hand the floor back — at most twice a turn — while listening carries on.
   *Reasoned from the code, not from a capture: the Huawei test phone keeps no app logs and its voice key
   is invalid, so this is not yet verified on a device.*
-- **macOS: the notification store is found on every version.** Andee looked for `usernoted`'s database in
+- **macOS: the notification store is found on every version.** Mira looked for `usernoted`'s database in
   one place only — the group container macOS 15 uses. Earlier systems keep it under the per-user Darwin
   directory, where the file does not exist, and that was reported as missing Full Disk Access, so
   granting it and restarting changed nothing. Now each known location is tried in turn (the old one asked
@@ -570,8 +570,8 @@ So the default is silence, speaking needs a reason, and the reason is rationed.
 ## [0.6.2] - 2026-10-26
 
 **The download list now says what each file is for, and lists them in the order you would want them.**
-Every asset carries a label naming its platform and device — `Andee 0.6.2 · Android-arm64-v8a`,
-`Andee 0.6.2 中文版 · Mac-Apple 芯片` — and the list reads Android before Mac, most common device first,
+Every asset carries a label naming its platform and device — `Mira 0.6.2 · Android-arm64-v8a`,
+`Mira 0.6.2 中文版 · Mac-Apple 芯片` — and the list reads Android before Mac, most common device first,
 English group before Chinese.
 
 No behaviour changed in the app itself. This is a packaging release: the same ten builds as 0.6.1,
@@ -579,8 +579,8 @@ named and ordered better.
 
 ### Changed
 
-- **Asset file names gained a platform field**: `andee-<version>-<lang>-<platform>-<device>.<ext>`, so
-  `andee-0.6.2-en-android-arm64-v8a.apk`. Three things depend on that shape, and each was decided by
+- **Asset file names gained a platform field**: `mira-<version>-<lang>-<platform>-<device>.<ext>`, so
+  `mira-0.6.2-en-android-arm64-v8a.apk`. Three things depend on that shape, and each was decided by
   measuring rather than by preference:
   - **The order a reader sees is the alphabetical order of these names.** GitHub sorts the asset list by
     name and the upload order is discarded, so the display order has to be encoded in the names —
@@ -636,7 +636,7 @@ to a different backend rather than saying so. Two causes, both fixed here.
 - **`verify_variants.py`** — confirms each package is the variant its name claims, by reading the
   **artifact**: the APK's own dex, and `codeflying.properties` from inside the dmg's jar. It checks
   that the server matches the language, that the language matches the name, that the architecture
-  matches, and that no credential is present anywhere — including `assets/andee_key.txt`, which is
+  matches, and that no credential is present anywhere — including `assets/mira_key.txt`, which is
   read before the build config and would override it.
 
 ### Changed
@@ -644,13 +644,13 @@ to a different backend rather than saying so. Two causes, both fixed here.
 - **`-PcodeflyingDomain`, `-PdefaultLang` and `-PcodeflyingSsl` override `local.properties`** for both
   platforms. The variant is stated where it can be read back from the build log, and the properties
   file is never edited between builds — which is the step that eventually ships the wrong package.
-- **Both shipping servers are HTTPS-only**, measured rather than assumed: `baas.kuafuai.net` answers
+- **Both shipping servers are HTTPS-only**, measured rather than assumed: `baas.synxneuos.net` answers
   200 on https and 404 on http, `myapp.codeflying.app` answers 200 on https and does not connect at all
   on http. Hence `codeflyingSsl=true` travels with the variant rather than being left to the file.
 
 ## [0.6.0] - 2026-10-26
 
-**The assistant now has a second body.** Andee runs on macOS, on the same brain as the phone: the
+**The assistant now has a second body.** Mira runs on macOS, on the same brain as the phone: the
 agent loop, the notebook, the memory, the tools and the emotion ball are one implementation in a new
 `core/` module, and each body supplies only the parts that are genuinely its own — the accessibility
 service and the IME on Android, the accessibility API, real mouse and keyboard, and a sandboxed
@@ -679,7 +679,7 @@ what the body can physically do.
   share one implementation. `BrainHost` is the interface a body implements; the brain never sees an
   Android or a desktop type. A golden-text test pins the model-facing strings *before* the split, so a
   refactor that changes what the model reads fails loudly.
-- **Friends** (`core/peer/`). Two Andees pair by QR code — one-time, two minutes, three tries — and the
+- **Friends** (`core/peer/`). Two Miras pair by QR code — one-time, two minutes, three tries — and the
   code carries the showing device's key fingerprint, so the scanner pins that key and no other. Every
   link afterwards is a signed handshake against pinned keys with forward-secret session keys; replayed,
   altered or reordered frames drop the link. Two kinds, chosen by whoever shows the code: **my device**
@@ -724,7 +724,7 @@ what the body can physically do.
 
 ## [0.5.3] - 2026-10-22
 
-**You can now tell it to stop, out loud, and it will.** "Exit Andee" / "Take a break" (and their
+**You can now tell it to stop, out loud, and it will.** "Exit Mira" / "Take a break" (and their
 Chinese equivalents) ends the current task and closes the assistant — microphone and wake word
 included — with no model call in the path. The rest of the delta is aiming: a large fix for apps that
 hand accessibility a blank root, and a documentation pass on the grid it aims with.
@@ -736,8 +736,8 @@ with — asking how to exit, or cancelling a subscription — are deliberately *
 here rather than leaving a `feat` under a patch for a reader to wonder at.
 
 **This release carries work from a teammate.** The voice-exit feature arrived as [PR
-#14](https://github.com/kuafuai/andee/pull/14) from [@lirongkuafuai](https://github.com/lirongkuafuai),
-closing [issue #13](https://github.com/kuafuai/andee/issues/13) — fifteen commits, reviewed and merged
+#14](https://github.com/Synxneuos/mira/pull/14) from [@lirongsynxneuos](https://github.com/lirongsynxneuos),
+closing [issue #13](https://github.com/Synxneuos/mira/issues/13) — fifteen commits, reviewed and merged
 rather than imported wholesale.
 
 ### Added
@@ -746,7 +746,7 @@ rather than imported wholesale.
   model call** — an utterance that matches is handled before any card answer or brain submission, so it
   works even when the model is unreachable. It cancels the running task, stops the service and closes
   the assistant, which also **stops the microphone and the wake word**; the app icon starts it again.
-  The match is **whole-utterance and user-initiated only**: *"how do I exit Andee"*, *"cancel my
+  The match is **whole-utterance and user-initiated only**: *"how do I exit Mira"*, *"cancel my
   subscription"* and a quoted command all stay ordinary turns, and a phrase that arrives on an
   automatic follow-up window is ignored (that one has its own test). While a meeting is recording it
   refuses and says why — end the meeting and save the minutes first. Teardown is guarded so a late
@@ -831,7 +831,7 @@ capability — nothing a user can do changed by it.
   the instant of capture — because a model that saw a round blue shape blamed it for covering a button
   and tried to route around it.
 - **The README's first image is now a phone with the character sitting on it** rather than a floating
-  head. `images/brand/andee-device.png` is the new hero art and `tools/make_social_preview.py` places it
+  head. `images/brand/mira-device.png` is the new hero art and `tools/make_social_preview.py` places it
   at 720 px wide, bottom-right, keeping 60 px of white padding with a 40 px analytic edge ramp; the mood
   strip narrows to 512/88 so the phone's left corner clears the last cell, and the text-to-art gap check
   now measures the character's left edge instead of a hard-coded offset. All four generated images were
@@ -918,7 +918,7 @@ protecting.
 
 - **A choice card's question and answer now land in the scrollback.** `ui.ask` spoke the question and
   handed the chosen option straight to the brain, so the card came and went and the conversation showed
-  the brain acting on a choice nobody could see being made. The question is an Andee row now and the
+  the brain acting on a choice nobody could see being made. The question is an Mira row now and the
   answer — the button, or the words said instead — is a row of the user's. A timeout writes nothing,
   because nothing was chosen.
 
@@ -986,7 +986,7 @@ breaks either way, so neither number is wrong about compatibility — this one i
   was designed on, and light was derived from it as the inversion. `Theme.night`'s initial value
   moves with the default, so the frame drawn before the saved setting is read is already the right
   palette rather than flipping one frame in.
-- **Every face got its props, its idle life and its finishing touches.** Andee's mouth dropped twice
+- **Every face got its props, its idle life and its finishing touches.** Mira's mouth dropped twice
   — `−0.185 → −0.235 → −0.285` — so there is a finger of sphere between its eyes and its smile
   instead of the two crowding together. Sleep stopped being a flattening pose: the `sqx`/`sqy` that
   squashed the resting and sleeping ball into a puddle are gone, and the floppy horns, the ⌣ eyes and
@@ -1032,7 +1032,7 @@ Volcengine device.
   of the provider **actually in use**, and `voiceReach` probes that provider's host. The rows name
   neither — a green tick earned by the Volcengine key while the device is talking to Google is the exact lie
   that having one checklist instead of two exists to prevent.
-  *(Contributed by @kuafu-limanxiang in [#8](https://github.com/kuafuai/andee/pull/8).)*
+  *(Contributed by @kuafu-limanxiang in [#8](https://github.com/Synxneuos/mira/pull/8).)*
 - **The launcher icon is now the thinking pose, on white.** It was built from a sheet with a glow
   painted around the whole head and composited over that glow; it is now built from the cut-out of the
   character with a hand on its chin, on a plain `#ffffff`. Same character either way, so nothing about
@@ -1097,7 +1097,7 @@ the reader to build one — see *Added* and `docs/releases/v0.3.2.md`.
   on**. Its cost is stated
   on the row that flips it rather than left for the status bar to mention: the microphone stays open,
   and so does the system's recording indicator.
-  Woken with the keyguard up, Andee can hear and answer — `tts.speak` needs nothing from the screen —
+  Woken with the keyguard up, Mira can hear and answer — `tts.speak` needs nothing from the screen —
   but it must not pretend it can act. A gesture aimed at a locked device is dropped by the input
   pipeline and reports nothing; the lock screen's own `FLAG_SECURE` means there were never any logs to
   search; `screen.ui_tree` returns the keyguard's empty placeholder, indistinguishable from the
@@ -1219,7 +1219,7 @@ oversight later.
   one is laid out at desktop width and scaled down, and the ~110×44 px the Done pill occupies in the
   top-right corner, because that pill is ours. **The cost is on the record**: for the small models this
   runs against, that description was the only lever on page quality, and nothing enforces any more
-  that a generated page reads as part of Andee.
+  that a generated page reads as part of Mira.
 - **The local LLM endpoint and model follow the UI language.** The on-device tab's two LLM rows already had
   a hint that doubled as the value a blank row resolves to, and both were hardcoded to DeepSeek —
   self-consistent for a Chinese card and wrong for an English one. The cheapest possible fix, changing
@@ -1240,14 +1240,14 @@ oversight later.
   own, so back from Settings had nowhere of ours to return to. `SelfCheckUi.onErrand` (was
   `onYieldScreen`) now hands the host the Intent and lets the host say whether it can carry it.
   `Fix.Grant` goes through the same door, so Allow on the microphone and notification rows stops ending on the launcher too.
-- **The prop-and-pose layer is on every look now**, not just Andee — stars, a heart, a shield, a sweat
+- **The prop-and-pose layer is on every look now**, not just Mira — stars, a heart, a shield, a sweat
   bead, the sliced lid, and the idle life that lets a look wear its own expressions and nap while
   nothing is happening. The argument for keeping it to one look was that the others had been tuned
   without it; that is overruled, because a look that is not alive standing next to one that is reads as
   the broken one. Switching it on for Imp needed a fix nothing at the call site would have hinted at:
   the lid's eye mesh was cut at a fixed 0.38 and Imp ships a resting eye already cut at 0.48, so an
   angry imp would have *opened* its eyes, in two moods, silently.
-- **Andee's horns stand higher**, fade to a peach tip and hang on two springs, so a wiggle or a turn
+- **Mira's horns stand higher**, fade to a peach tip and hang on two springs, so a wiggle or a turn
   swings them and they ring out; the mood sets where they rest. While idle it now wears a short run of
   safe faces and naps for under a minute instead of sleeping until touched — faces that report what the
   device is doing, or that read as an alarm, are left out on purpose. Hands are a round palm, a thumb
@@ -1294,7 +1294,7 @@ oversight later.
 
 ### Removed
 
-- **The raised mitts are gone.** Andee's expressions were built around a pair of mitts raised at the
+- **The raised mitts are gone.** Mira's expressions were built around a pair of mitts raised at the
   side — a fist under the chin for thinking, two fists up for celebrating, a hand on the belly for
   resting — and every one of them read as a lump at the eighty dp the ball is actually drawn at, with
   the parts sharing the body's own colour and material. Dropping them is the honest version of "this
@@ -1339,7 +1339,7 @@ matter, because a ROM that revokes accessibility now costs one capability instea
   tap on this path. The result says which way in it used, and carries no aim grid and no element list
   — handing the brain a picture it believes it can aim with would be worse than handing it fewer
   fields. Asked for only while it is the only option: the consent is a notification action, offered
-  only when Andee is blind and has no capture, and `ACTION_ACCESSIBILITY_SETTINGS` stays the first
+  only when Mira is blind and has no capture, and `ACTION_ACCESSIBILITY_SETTINGS` stays the first
   action because the projection buys reading, not acting.
 - **Every mood has a `Pose` on top of its `Face` row** — a wink, eyes that look up and aside, lowered
   or worried lids, a squashed resting body, two puffy hands (open, fist, pointing) and pop-in props.
@@ -1347,12 +1347,12 @@ matter, because a ROM that revokes accessibility now costs one capability instea
   the model's own text, and the prompt says to keep them rare. Only a look with `BallLook.gestures`
   reads it, so the other five characters are unchanged. There is deliberately no open mouth:
   cross-fading it with the thin smile drew both at once and one poked through the other.
-- **The default ball is now the blue horned Andee** — a cobalt head with curled horns and glassy
+- **The default ball is now the blue horned Mira** — a cobalt head with curled horns and glassy
   eyes, first in `BallLooks.ALL`, so a fresh install and a factory reset both land on it. Its numbers
   were measured off the reference picture through the renderer's own camera rather than eyeballed.
   The launcher icon set, README covers, social previews and org avatar are regenerated from the same
   source art.
-- **The CodeFlying per-user token is read from `assets/andee_key.txt`**, with `BuildConfig` as the
+- **The CodeFlying per-user token is read from `assets/mira_key.txt`**, with `BuildConfig` as the
   fallback for dev builds. Production APKs are built once from shared source and the per-user `kft_`
   token is written into that asset at package time, so the base APK stays identical across users and
   the Gradle build cache no longer misses per user.
@@ -1364,7 +1364,7 @@ matter, because a ROM that revokes accessibility now costs one capability instea
 
 ### Changed
 
-- **The version check moved to `https://api.heyandee.com`, from `https://andee.kuafuai.net`.**
+- **The version check moved to `https://api.heymira.com`, from `https://mira.synxneuos.net`.**
   `VERSION_API_BASE` is still a hardcoded constant in `device/SelfCheck.kt`, and still the only
   address this app calls that the user did not configure — see `docs/permissions.md` — so the move is
   one line of source plus the three places that quote it and have to stay in step: both `permissions`
@@ -1389,8 +1389,8 @@ matter, because a ROM that revokes accessibility now costs one capability instea
   ours too, and it was missing from `pageClosed`. The first cut restored the card only if it had been
   fullscreen when the page went up; the report was the other way round, and closing the self-check
   card drew the same complaint and got the same answer.
-- Both READMEs point their CodeFlying links at the `/andee` one-click landing page rather than the
-  generic official site, so every jump lands on the Andee entry page.
+- Both READMEs point their CodeFlying links at the `/mira` one-click landing page rather than the
+  generic official site, so every jump lands on the Mira entry page.
 
 ### Fixed
 
@@ -1453,7 +1453,7 @@ matter, because a ROM that revokes accessibility now costs one capability instea
 ### Removed
 
 - `tools/check_launcher_icon.py`, `tools/cosmic_backdrop.py` and the old `make_launcher_icon.py`,
-  replaced by a rewritten generator built on `tools/andee_head.py`. All three were written for the
+  replaced by a rewritten generator built on `tools/mira_head.py`. All three were written for the
   previous character and a star-field backdrop, neither of which is in use any more.
   `tools/make_social_preview.py` generates the social previews, both README covers and the org avatar
   from the same source art.
@@ -1559,7 +1559,7 @@ in the direction that made the model act on a grant nobody had given.
   the same reason, so this joins them — and only when `confirm=true`, because the first call is the
   script the brain reads back and that one belongs in the card.
 - **Both READMEs gained a one-click build page and had its likely-reading fixed.** The nav and the
-  CodeFlying paragraph now point at the `/andee` page — describe the app, tap the build button, get a
+  CodeFlying paragraph now point at the `/mira` page — describe the app, tap the build button, get a
   pre-configured package with a QR code — and the "any app" feature line was reworded in both
   languages, because "not a list of integrations" was being read as a claim about integrations this
   app has rather than a claim about aim. The page itself is a separate service with no direct
@@ -1775,7 +1775,7 @@ because a release this size is the norm.
   the one real WARN, because the service is then saying this build is no longer supported. A
   statistics endpoint being unreachable is never the user's problem, so it never paints the card red.
   **The address is a hardcoded constant, not a setting.** `VERSION_API_BASE` lives in
-  `device/SelfCheck.kt` (`https://andee.kuafuai.net`), with no settings row, no build flag and no
+  `device/SelfCheck.kt` (`https://mira.synxneuos.net`), with no settings row, no build flag and no
   `local.properties` key behind it, so turning the check off means editing that line and rebuilding.
   That is a deliberate trade rather than an oversight: a check which can be silently misconfigured is
   a check that silently stops working, and this one should be on for everyone or off for everyone.
@@ -1787,7 +1787,7 @@ because a release this size is the norm.
   `CLEARTEXT communication to X not permitted by network security policy` — arrives as a version row
   reading "not found", a message about a policy rather than about anything the user did. So the first cut
   added the service's IP address to that file, which is the right move *for a `http://` address*. The
-  address then became `https://andee.kuafuai.net`, which needs no exception at all, and the entry was
+  address then became `https://mira.synxneuos.net`, which needs no exception at all, and the entry was
   deleted rather than left in place: an exception for a host nobody calls only widens what this app
   will talk to in the clear. The CodeFlying backend's plain-HTTP address is still listed and still needs
   to be. The rule to carry forward is that this file tracks the addresses actually in use — adding a
@@ -1924,7 +1924,7 @@ because a release this size is the norm.
   *this* project to). It is now described in its own terms first — **a general platform where you
   describe the app you want and it develops and publishes it** — followed by one plain sentence:
   **a separate service with no direct relationship to this project**, its own terms, pricing and data
-  handling. Same treatment in `## Using Andee`; the Chinese getting-started section
+  handling. Same treatment in `## Using Mira`; the Chinese getting-started section
   table carried it too, and has since been removed (see *Removed*). The practical guidance is
   unchanged (still the shortest path; still an APK you have to install; the free token allowance is
   still finite and then paid), because none of that was wrong — only the implied ownership was.
@@ -1966,10 +1966,10 @@ because a release this size is the norm.
 
 ### Removed
 
-- `brain/andee-system-prompt.md` — an unused mirror of the cloud brain's prompt. It had no runtime
+- `brain/mira-system-prompt.md` — an unused mirror of the cloud brain's prompt. It had no runtime
   role (no build step references it, no code loads it). **The cloud brain mode itself is not
   retired**; only this repo's copy of its prompt was removed. Recover it with
-  `git show <rev>:brain/andee-system-prompt.md`.
+  `git show <rev>:brain/mira-system-prompt.md`.
 - `dog/NRF24_Dongle/README.md` reference in the README — the dongle firmware is not in this
   repository and never was. The README now says so.
 - The Chinese getting-started section in `README.zh-CN.md`, heading included. Its visible content was three

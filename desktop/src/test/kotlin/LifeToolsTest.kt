@@ -1,11 +1,11 @@
-import net.kuafuai.andee.config.NotebookBook
-import net.kuafuai.andee.config.NotebookStore
+import net.synxneuos.mira.config.NotebookBook
+import net.synxneuos.mira.config.NotebookStore
 import org.json.JSONObject
 import org.junit.Test
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 
-/** Quick smoke test for [net.kuafuai.andee.config.LifeTools]. */
+/** Quick smoke test for [net.synxneuos.mira.config.LifeTools]. */
 class LifeToolsTest {
     private val store = object : NotebookStore {
         var data = "{}"
@@ -14,9 +14,9 @@ class LifeToolsTest {
         override fun wipe() { data = "{}" }
     }
     private val book = NotebookBook(store).apply {
-        localWikiStore = net.kuafuai.andee.wiki.LocalWikiStore(java.io.File.createTempFile("wiki", "").also { it.delete(); it.mkdirs() })
+        localWikiStore = net.synxneuos.mira.wiki.LocalWikiStore(java.io.File.createTempFile("wiki", "").also { it.delete(); it.mkdirs() })
     }
-    private val life = net.kuafuai.andee.config.LifeTools(book.selfhood, book.people, book.wiki)
+    private val life = net.synxneuos.mira.config.LifeTools(book.selfhood, book.people, book.wiki)
 
     @Test
     fun `self_note starts empty`() {

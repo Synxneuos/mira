@@ -65,8 +65,8 @@ unsigned APK that will not install.
 - [ ] I only changed files related to this PR. Untracked files left by other work are still
       untracked — I did not commit, stash, or delete them.
 - [ ] Commit messages say what changed and why.
-- [ ] I have read [CONTRIBUTING.md](https://github.com/kuafuai/andee/blob/main/CONTRIBUTING.md)
-      ([中文](https://github.com/kuafuai/andee/blob/main/CONTRIBUTING.zh-CN.md))
-      and agree to the contribution licensing terms in [LICENSE](https://github.com/kuafuai/andee/blob/main/LICENSE) §A.2.
+- [ ] I have read [CONTRIBUTING.md](https://github.com/Synxneuos/mira/blob/main/CONTRIBUTING.md)
+      ([中文](https://github.com/Synxneuos/mira/blob/main/CONTRIBUTING.zh-CN.md))
+      and agree to the contribution licensing terms in [LICENSE](https://github.com/Synxneuos/mira/blob/main/LICENSE) §A.2.
 - [ ] Every commit carries a `Signed-off-by:` line (`git commit -s`). CI checks this
-      ([why](https://github.com/kuafuai/andee/blob/main/CONTRIBUTING.md#sign-off-signed-off-by)).
+      ([why](https://github.com/Synxneuos/mira/blob/main/CONTRIBUTING.md#sign-off-signed-off-by)).

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Compose the Andee DMG background from icon-inspired art and clear guidance.
+"""Compose the Mira DMG background from icon-inspired art and clear guidance.
 
 Finder draws the actual app and Applications icons. This image only supplies
 decoration and instructions; coordinates match dmgbuild-settings.py.
@@ -69,7 +69,7 @@ d.text(
     font=font(23), fill=(40, 58, 111, 245), anchor="mm",
 )
 d.text(
-    xy((410, 402)), "Drag Andee to Applications",
+    xy((410, 402)), "Drag Mira to Applications",
     font=font(13), fill=(70, 85, 135, 230), anchor="mm",
 )
 

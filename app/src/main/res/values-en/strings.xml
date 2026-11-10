@@ -209,7 +209,7 @@
     <string name="settings_brain_local_note">The device runs the agent loop itself, with no hub. Without a key it will not take over.</string>
     <string name="settings_codeflying_get_key">No key? Sign up at the link below, then paste your key into the box underneath. New users get free credit.</string>
     <string name="settings_codeflying_open_site">Open CodeFlying.app ›</string>
-    <string name="codeflying_url" translatable="false">https://www.codeflying.app/andee</string>
+    <string name="codeflying_url" translatable="false">https://www.codeflying.app/mira</string>
     <string name="settings_no_key_use_codeflying">No key? Tap here to switch to CodeFlying</string>
     <string name="settings_codeflying_key">CodeFlying key</string>
     <string name="common_copy">Copy</string>
@@ -894,7 +894,7 @@
          that name is read by a person, hence a resource rather than
          BallLook.name, which is for logs and diffs. -->
     <string name="ball_look_mira">Mira</string>
-    <string name="ball_look_andee">Mira</string>
+    <string name="ball_look_mira">Mira</string>
     <string name="ball_look_cream">Kitten</string>
     <string name="ball_look_bajie">Pigsy</string>
     <string name="ball_look_rabbit">Rascal</string>
