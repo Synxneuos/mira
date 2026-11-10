@@ -136,6 +136,8 @@ class SelfhoodTest {
         val line = me.indexForPrompt(ownerName = "老陈")
         assertTrue(line, line.startsWith("Your name: 安迪"))
         assertTrue(line, line.contains("Call them: 老陈."))
+        me.setName("Mira")
+        assertNull(me.name())
         me.setName("Andee")                                   // being called what I am is no name at all
         assertNull(me.name())
     }

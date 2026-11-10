@@ -159,7 +159,7 @@ dependencies {
     testImplementation libs.junit
 }
 
-def macPackageName = 'Andee'
+def macPackageName = 'Mira'
 def macPackageVersion = '1.0.0'
 
 compose.desktop {
@@ -181,23 +181,23 @@ compose.desktop {
                 bundleID = 'net.kuafuai.andee.mac'
                 entitlementsFile.set(project.file('entitlements.plist'))
                 runtimeEntitlementsFile.set(project.file('entitlements.plist'))
-                // macOS shows these when Andee first asks; without them the request is refused silently.
+                // macOS shows these when Mira first asks; without them the request is refused silently.
                 infoPlist {
                     extraKeysRawXml = '''
                         <key>NSMicrophoneUsageDescription</key>
-                        <string>Andee listens when you press the microphone button, to hear what you ask.</string>
+                        <string>Mira listens when you press the microphone button, to hear what you ask.</string>
                         <key>NSAppleEventsUsageDescription</key>
-                        <string>Andee uses Calendar, Reminders, Contacts and other apps when you ask it to.</string>
+                        <string>Mira uses Calendar, Reminders, Contacts and other apps when you ask it to.</string>
                         <key>NSCalendarsUsageDescription</key>
-                        <string>Andee reads and adds calendar events when you ask it to.</string>
+                        <string>Mira reads and adds calendar events when you ask it to.</string>
                         <key>NSRemindersUsageDescription</key>
-                        <string>Andee sets reminders when you ask it to.</string>
+                        <string>Mira sets reminders when you ask it to.</string>
                         <key>NSContactsUsageDescription</key>
-                        <string>Andee looks up contacts when you ask it to.</string>
+                        <string>Mira looks up contacts when you ask it to.</string>
                         <key>NSCameraUsageDescription</key>
-                        <string>Andee looks through the camera only when you ask it to.</string>
+                        <string>Mira looks through the camera only when you ask it to.</string>
                         <key>NSLocationUsageDescription</key>
-                        <string>Andee reads this Mac's location only when you ask where it is.</string>
+                        <string>Mira reads this Mac's location only when you ask where it is.</string>
                     '''
                 }
             }

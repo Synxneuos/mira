@@ -1111,25 +1111,20 @@ val BAJIE = BallLook(
  * the middle, mouth 45% of the way down — rather than the pixel offsets from a
  * circle's centre, which would have put the face too high.
  */
-val ANDEE = BallLook(
-    name = "andee",
-    bodyBase = floatArrayOf(0.250f, 0.460f, 0.870f),
-    bodyTint = 0.10f,
+val MIRA = BallLook(
+    name = "mira",
+    // Cozy pastel lavender / sky-sprite body
+    bodyBase = floatArrayOf(0.70f, 0.64f, 0.90f),
+    bodyTint = 0.12f,
     bodyAlbedo = 1.00f,
-    bodyGrad = 0.26f,
-    bodyAmb = 0.94f,
+    bodyGrad = 0.22f,
+    bodyAmb = 0.96f,
     bodyDiff = 0.20f,
-    // Soft, like the picture — a velvety plush, not lacquer. Low enough that
-    // the crown does not grow a white blob that would fight the catchlights.
-    bodyGloss = 0.05f,
+    // Soft velvety plush texture
+    bodyGloss = 0.04f,
     bodyScale = 0.870f,
     faceZ = 0.876f,
     eyeX = 0.345f,
-    // Raised 0.12 from the picture's own −0.03, after the horns were raised twice:
-    // with horns that tall the sphere read as a forehead dome with a face stuck on
-    // the bottom of it — 1.7 eye-diameters of blank above the eyes against the
-    // picture's 1.4. Eyes, mouth, cheeks and the sleep bubble all moved together so
-    // the face is the same face, one notch higher.
     eyeY = 0.070f,
     eyeRadius = 0.215f,
     eyeCyl = 0.012f,
@@ -1137,52 +1132,41 @@ val ANDEE = BallLook(
     mouthTube = 0.028f,
     mouthY = -0.285f,
     mouthThick = 0.140f,
-    eyeColor = floatArrayOf(0.035f, 0.080f, 0.280f),
+    // Deep amethyst galaxy eyes with soft starlight glints
+    eyeColor = floatArrayOf(0.18f, 0.08f, 0.35f),
     pupilR = 0f,
-    glintR = 0.065f,
-    glint2R = 0.050f,
-    glint2Color = floatArrayOf(0.45f, 0.70f, 1.00f),
+    glintR = 0.070f,
+    glint2R = 0.055f,
+    glint2Color = floatArrayOf(0.90f, 0.85f, 1.00f),
     gestures = true,
-    // 0.09 now, from 0.17: the eyes already sit 0.12 higher, so the same lift would
-    // put them well clear of the ledge and leave the peeking ball with no forehead.
     clingLift = 0.16f,
     smileRoll = 0f,
-    mouthInk = floatArrayOf(0.025f, 0.045f, 0.140f),
+    mouthInk = floatArrayOf(0.14f, 0.06f, 0.24f),
     arcScale = 1.5f,
     scanGain = 0.12f,
-    rimTint = floatArrayOf(1.0f, 0.62f, 0.50f),
+    // Dreamy soft aurora rim
+    rimTint = floatArrayOf(0.85f, 0.78f, 1.00f),
     rimTintMix = 1.0f,
-    // Light droplet on a mid-dark body, the same side of the split as [BEAR].
     bubbleX = 0.085f,
     bubbleY = 0.070f,
     bubbleR = 0.085f,
-    bubbleColor = floatArrayOf(0.88f, 0.93f, 1.00f),
+    bubbleColor = floatArrayOf(0.92f, 0.95f, 1.00f),
     bubblePow = 3.0f,
     bubbleShine = 26f,
     bubbleInner = 0.10f,
     mouthDeep = true,
-    // The picture has no cheeks. Kept faintly so the happy moods still flush.
-    blushColor = floatArrayOf(1f, 0.55f, 0.75f),
-    blushAlpha = 0.10f,
+    // Soft rosy chibi cheeks
+    blushColor = floatArrayOf(1.0f, 0.48f, 0.68f),
+    blushAlpha = 0.28f,
     blushBlendNormal = true,
-    blushSize = 0.40f,
+    blushSize = 0.42f,
     blushX = 0.440f,
     blushY = -0.010f,
-    // A light rim, like the imp's and bear's: a dark outline on a mid-dark body
-    // is a smudge.
     rimDark = false,
     rimGain = 1.30f,
     rimPow = 3.0f,
 
-    // See the class note: fitted to the picture's horn, then raised twice on request
-    // — the second time (0.477 → 0.53, tilt 50 → 38, bend −80 → −62, a longer horn)
-    // makes them stand more upright as well as higher: the tip goes from y 0.89 to
-    // about 1.02 and the sweep sideways shrinks. Base buried at (0.40, 0.53) so only
-    // the curl shows.
-    // The tip blushes toward the coral of the rim and the props. Blue and peach
-    // mixed half and half is a dull lilac, so it goes nearly all the way (0.9) over
-    // the last ~40% of the horn: the very end is peach, and only the short stretch
-    // between is the in-between colour.
+    // Starlight antenna on top
     hornH = 0.420f,
     hornR = 0.265f,
     hornX = 0.400f,
@@ -1192,13 +1176,13 @@ val ANDEE = BallLook(
     hornBend = -50f,
     hornTaper = 0.9f,
     hornShade = 1.00f,
-    hornTipColor = floatArrayOf(1.00f, 0.70f, 0.58f),
-    hornTipMix = 0.00f,
-    // 1.5 rather than 1: measured on the device, a wiggle at 1 moves the horns about
-    // 10 px against the eyes on a 420 dp ball, which is about 3° and at the real
-    // 168 dp size is a pixel and a half — present, and not visible.
+    hornTipColor = floatArrayOf(1.00f, 0.92f, 0.60f),
+    hornTipMix = 0.65f,
     hornWobble = 1.5f,
 )
+
+/** Alias for backward compatibility */
+val ANDEE = MIRA
 
 /**
  * What the kitten is like to talk to. See [BallLook.persona] for the rules this
@@ -2380,7 +2364,7 @@ object BallLooks {
      * designed around; [IMP] is last because it is the one a user should arrive
      * at on purpose.
      */
-    val ALL = listOf(ANDEE, CREAM, BAJIE, RABBIT, BEAR, IMP)
+    val ALL = listOf(MIRA, CREAM, BAJIE, RABBIT, BEAR, IMP)
 
     @Volatile
     private var requested = 0
@@ -2417,7 +2401,7 @@ object BallLooks {
      * the user a different character.
      */
     fun requestByName(name: String?) {
-        val i = ALL.indexOfFirst { it.name == name }
+        val i = ALL.indexOfFirst { it.name == name || (it.name == "mira" && name == "andee") }
         if (i >= 0) request(i)
     }
 
@@ -2441,7 +2425,7 @@ object BallLooks {
      * an unknown name is a plain [CREAM], not a crash and not a silent imp.
      */
     fun byName(name: String?): BallLook =
-        ALL.firstOrNull { it.name == name } ?: ALL[0]
+        ALL.firstOrNull { it.name == name || (it.name == "mira" && name == "andee") } ?: ALL[0]
 
     /** @return true if the look changed, i.e. look-sized state is now stale. */
     fun latch(): Boolean {

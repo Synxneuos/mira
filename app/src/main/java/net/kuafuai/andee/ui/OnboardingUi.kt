@@ -125,9 +125,9 @@ class OnboardingUi(
 
     fun show() {
         if (root != null) return
-        // Andee's own look, whatever is saved: the recorded voice is Andee's.
+        // Mira's own look, whatever is saved: the recorded voice is Mira's.
         // Not saved — the user's pick comes back in [destroy].
-        BallLooks.requestByName("andee")
+        BallLooks.requestByName("mira")
         ball = EmotionBallTextureView(context).apply {
             alpha = 0f
             elevation = dp(24).toFloat()
@@ -346,7 +346,7 @@ class OnboardingUi(
         orientation = LinearLayout.HORIZONTAL
         gravity = Gravity.CENTER_VERTICAL
         addView(TextView(context).apply {
-            text = "ANDEE"
+            text = "MIRA"
             setTextSize(TypedValue.COMPLEX_UNIT_SP, Glass.Type.CAPTION)
             setTextColor(Color.parseColor(Glass.TITLE))
             setTypeface(typeface, Typeface.BOLD)
@@ -981,7 +981,7 @@ class OnboardingUi(
         body.addView(sectionLabel(lctx.getString(R.string.onboarding_meet_assistant)), spacedParams(18))
 
         val andy = lctx.getString(R.string.onboarding_meet_andy)
-        if (selectedAssistant != "Andee" && selectedAssistant != andy && selectedAssistant.isNotBlank()) {
+        if (selectedAssistant != "Mira" && selectedAssistant != "Andee" && selectedAssistant != andy && selectedAssistant.isNotBlank()) {
             customAssistantDraft = selectedAssistant
             selectedAssistant = OTHER
         }
@@ -994,7 +994,7 @@ class OnboardingUi(
                 if (optionViews.size > 1) marginStart = dp(7)
             })
         }
-        addOption("Andee", "Andee")
+        addOption("Mira", "Mira")
         addOption(andy, andy)
         addOption(OTHER, lctx.getString(R.string.onboarding_meet_other))
         body.addView(optionRow, spacedParams(8))

@@ -46,21 +46,21 @@ object OnboardingState {
     }
 
     fun assistantName(context: Context): String =
-        prefs(context).getString(KEY_ASSISTANT_NAME, "Andee").orEmpty().ifBlank { "Andee" }
+        prefs(context).getString(KEY_ASSISTANT_NAME, "Mira").orEmpty().ifBlank { "Mira" }
 
     fun userName(context: Context): String =
         prefs(context).getString(KEY_USER_NAME, "").orEmpty()
 
     /**
      * The names go where the rest of the device reads them, in the encrypted
-     * notebook: Andee's own name on its self ([net.kuafuai.andee.config.Selfhood.setName]),
+     * notebook: Mira's own name on its self ([net.kuafuai.andee.config.Selfhood.setName]),
      * the user's on their owner record in the people it knows
      * ([net.kuafuai.andee.config.People.setOwnerName]). Both ride on every user
      * message from there, so the brain actually uses them. The preferences are
      * kept only so this UI paints instantly without opening the notebook.
      */
     fun saveNames(context: Context, assistantName: String, userName: String) {
-        val assistant = assistantName.trim().ifEmpty { "Andee" }
+        val assistant = assistantName.trim().ifEmpty { "Mira" }
         val user = userName.trim()
         prefs(context).edit()
             .putString(KEY_ASSISTANT_NAME, assistant)
@@ -68,7 +68,7 @@ object OnboardingState {
             .apply()
 
         runCatching { Notebook.selfhood(context).setName(assistant) }
-            .onFailure { android.util.Log.w("Onboarding", "could not save Andee's name", it) }
+            .onFailure { android.util.Log.w("Onboarding", "could not save Mira's name", it) }
         runCatching { Notebook.people(context).setOwnerName(user) }
             .onFailure { android.util.Log.w("Onboarding", "could not save the user's name", it) }
     }

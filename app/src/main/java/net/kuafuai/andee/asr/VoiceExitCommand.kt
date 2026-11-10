@@ -12,9 +12,14 @@ internal object VoiceExitCommand {
         text.lowercase(Locale.ROOT).filter { it.isLetterOrDigit() }
 
     private val commands = setOf(
+        "exit Mira", "close Mira", "quit Mira",
+        "Mira exit", "Mira close", "Mira quit",
+        "take a break", "Mira take a break", "Hey Mira take a break",
+        "退出 Mira", "关闭 Mira", "Mira 退出", "Mira 关闭",
+        "Mira 休息一下",
         "exit Andee", "close Andee", "quit Andee",
         "Andee exit", "Andee close", "Andee quit",
-        "take a break", "Andee take a break", "Hey Andee take a break",
+        "Andee take a break", "Hey Andee take a break",
         "退出 Andee", "关闭 Andee", "Andee 退出", "Andee 关闭",
         "退出安迪", "关闭安迪", "安迪退出", "安迪关闭",
         "休息一下", "先休息一下", "你先休息一下",

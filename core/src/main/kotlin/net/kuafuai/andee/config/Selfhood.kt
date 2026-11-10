@@ -67,16 +67,16 @@ class Selfhood(
     // ---- name ------------------------------------------------------------------
 
     /**
-     * What this person calls me, given at first run (「安迪」). Andee is what I am; this is my name with them.
-     * Null when nobody has named me, and then I am simply Andee.
+     * What this person calls me, given at first run. Mira is what I am; this is my name with them.
+     * Null when nobody has named me, and then I am simply Mira.
      */
     fun name(): String? = synchronized(lock) { load().optString("name").trim().ifEmpty { null } }
 
-    /** Set by the user (first run); blank clears it back to plain Andee. */
+    /** Set by the user (first run); blank clears it back to plain Mira. */
     fun setName(name: String) = synchronized(lock) {
         val root = load()
         val n = name.trim().take(MAX_NAME)
-        if (n.isEmpty() || n.equals("Andee", ignoreCase = true)) root.remove("name") else root.put("name", n)
+        if (n.isEmpty() || n.equals("Mira", ignoreCase = true) || n.equals("Andee", ignoreCase = true)) root.remove("name") else root.put("name", n)
         save(root)
     }
 
@@ -360,7 +360,7 @@ class Selfhood(
         val due = due(THRESHOLD, now).take(2)
         if (nm == null && ownerName == null && n == null && due.isEmpty()) return ""
         buildString {
-            if (nm != null) append("Your name: ").append(nm).append(" (what they named you; Andee is what you are).")
+            if (nm != null) append("Your name: ").append(nm).append(" (what they named you; Mira is what you are).")
             if (ownerName != null) {
                 if (isNotEmpty()) append(' ')
                 append("Call them: ").append(ownerName).append('.')

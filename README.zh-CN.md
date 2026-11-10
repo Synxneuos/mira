@@ -35,7 +35,7 @@
   <a href="./README.zh-CN.md"><img alt="简体中文文档" src="https://img.shields.io/badge/简体中文-d9d9d9"></a>
 </p>
 
-<h1 align="center">Andee</h1>
+<h1 align="center">Mira</h1>
 
 <h3 align="center">他会成为这台设备的主人。</h3>
 

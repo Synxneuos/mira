@@ -102,7 +102,7 @@ fun main() {
         Window(
             onCloseRequest = { chat = false },
             visible = chat,
-            title = "Andee",
+            title = "Mira",
             // Big enough that the conversation, the ball above it and the sidebar all breathe on a laptop; never
             // past 90% of the screen it opens on.
             state = rememberWindowState(width = defaultChatSize().first, height = defaultChatSize().second),
@@ -111,13 +111,13 @@ fun main() {
             chatWindow = window
             window.minimumSize = java.awt.Dimension(760, 520)
             MenuBar {
-                Menu("Andee") {
+                Menu("Mira") {
                     Item(if (Strings.lang() == "zh") "新对话" else "New chat", onClick = { Assistant.newConversation(); chat = true; nav.go("chat") },
                         shortcut = androidx.compose.ui.input.key.KeyShortcut(androidx.compose.ui.input.key.Key.N, meta = true))
                     Item(if (Strings.lang() == "zh") "显示动态" else "Show timeline", onClick = { chat = true; nav.go("chat") })
                     Item(if (Strings.lang() == "zh") "设置" else "Settings", onClick = { chat = true; nav.go("settings") },
                         shortcut = androidx.compose.ui.input.key.KeyShortcut(androidx.compose.ui.input.key.Key.Comma, meta = true))
-                    Item(if (Strings.lang() == "zh") "退出 Andee" else "Quit Andee", onClick = ::exitApplication,
+                    Item(if (Strings.lang() == "zh") "退出 Mira" else "Quit Mira", onClick = ::exitApplication,
                         shortcut = androidx.compose.ui.input.key.KeyShortcut(androidx.compose.ui.input.key.Key.Q, meta = true))
                 }
             }
