@@ -22,6 +22,18 @@ class VoiceExitCommandTest {
     }
 
     @Test
+    fun `recognizes the Mira exit phrases in English, Chinese and mixed speech`() {
+        assertTrue(VoiceExitCommand.matches("Exit Mira"))
+        assertTrue(VoiceExitCommand.matches("Hey Mira, take a break."))
+        assertTrue(VoiceExitCommand.matches("  QUIT   MIRA!  "))
+        assertTrue(VoiceExitCommand.matches("关闭 Mira！"))
+        assertTrue(VoiceExitCommand.matches("Mira，你先休息一下。"))
+        assertTrue(VoiceExitCommand.matches("退出米拉。"))
+        assertTrue(VoiceExitCommand.matches("米拉，休息一下。"))
+        assertFalse(VoiceExitCommand.matches("Exit Mira", userInitiated = false))
+    }
+
+    @Test
     fun `recognizes Chinese and mixed-language speech`() {
         assertTrue(VoiceExitCommand.matches("退出安迪。"))
         assertTrue(VoiceExitCommand.matches("关闭 Andee！"))

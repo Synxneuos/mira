@@ -32,3 +32,5 @@ andee-website/*.degraded.html
 
 # JVM 崩溃日志（本地跑 Mac 版崩溃时落在仓库根目录的 hs_err_pid*.log），是临时产物不是源码。
 hs_err_pid*.log
+# Kotlin 2.x per-project daemon/session data
+.kotlin/

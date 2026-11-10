@@ -266,7 +266,7 @@ class AndroidPeers(context: Context) {
      * what they asked for.
      */
     fun pairFromQr(raw: String): PeerProtocol.Peer {
-        val inv = PeerQr.decode(raw) ?: throw IllegalArgumentException("not an Andee pairing code")
+        val inv = PeerQr.decode(raw) ?: throw IllegalArgumentException("not a Mira pairing code")
         val me = store.identity()
         val hosts = listOfNotNull(inv.host, seen[inv.id]?.host).distinct()
         var last: Exception? = null
